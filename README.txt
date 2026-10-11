@@ -1,46 +1,67 @@
+# Quartz Enhanced
 
-Source installation information for modders
--------------------------------------------
-This code follows the Minecraft Forge installation methodology. It will apply
-some small patches to the vanilla MCP source code, giving you and it access 
-to some of the data and functions you need to build a successful mod.
+Enhances the vanilla Minecraft experience and adds a wealth of brand-new content to explore!
 
-Note also that the patches are built against "un-renamed" MCP source code (aka
-SRG Names) - this means that you will not be able to read them directly against
-normal code.
+## 📖 About
 
-Setup Process:
-==============================
+Quartz Enhanced expands the role of quartz in Minecraft by adding new materials, tools, armor, food, and a custom workstation. It is designed to feel like a natural extension of the vanilla game, with balanced progression and cross-mod compatibility.
 
-Step 1: Open your command-line and browse to the folder where you extracted the zip file.
+## ✨ Features
 
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: `./gradlew genEclipseRuns`
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
-   or run `gradlew eclipse` to generate the project.
+### Materials
+- **Reinforced Quartz Ingot** and **Reinforced Quartz Nugget**
+- **Nature Quartz Ingot** and **Nature Quartz Nugget**
+- **Quartz Jade** and **Fine Quartz Jade**
+- **Quartz Powder** — grind quartz on obsidian, or use Create's Crushing Wheels / Millstone
+- **Resonance Stone** and **Nature Resonance Stone**
 
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: `./gradlew genIntellijRuns`
-4. Refresh the Gradle Project in IDEA if required.
+### Tools & Weapons
+- Full **Reinforced Quartz** tool set: sword, pickaxe, axe, shovel, hoe, knife
+- **Nature Quartz** tool series with unique passive abilities
+- **Quartz Jade Magic Wand** — a one-time-use catastrophic spell
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can 
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-(this does not affect your code) and then start the process again.
+### Armor
+- Complete **Reinforced Quartz** armor set
 
-Mapping Names:
-=============================
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license, if you do not agree with it you can change your mapping names to other crowdsourced names in your 
-build.gradle. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
+### Food
+- Quartz Apple
+- Quartz Refreshing Sweet Soup
+- Quartz Nether Fungus Aromatic Stew
+- Quartz Honey Pudding
 
-Additional Resources: 
-=========================
-Community Documentation: https://docs.minecraftforge.net/en/1.20.1/gettingstarted/
-LexManos' Install Video: https://youtu.be/8VEdtQLuLO0
-Forge Forums: https://forums.minecraftforge.net/
-Forge Discord: https://discord.minecraftforge.net/
+### Workstation
+- **Resonance Workbench** — a new crafting station for Resonance recipes, with full JEI integration
+
+## 🔧 Dependencies
+
+### Required
+- Minecraft **1.20.1**
+- Forge **47.x**
+
+### Optional
+- **JEI** — recipe viewing for the Resonance Workbench
+- **Farmer's Delight** — extra interactions for quartz tools and food
+- **Create** — alternate ways to obtain Quartz Powder
+- **Jade** — automatic container info display (no plugin required)
+
+## 📥 Download
+
+- [CurseForge](https://www.curseforge.com/minecraft/mc-mods/quartz-enhanced)
+- [Modrinth](https://modrinth.com/mod/quartz_enhanced)
+
+## 🐛 Bug Reports & Suggestions
+
+Please report bugs or suggest features via [GitHub Issues](https://github.com/YOUR_USERNAME/Quartz_Enhanced/issues). When reporting a bug, please include:
+
+- Minecraft version
+- Forge version
+- Mod version
+- A description of the issue
+- The full crash log or latest.log (paste it on [Pastebin](https://pastebin.com) or [mclo.gs](https://mclo.gs))
+
+## 🛠️ Building from Source
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Quartz_Enhanced.git
+cd Quartz_Enhanced
+./gradlew build
