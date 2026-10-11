@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "quartz_enhanced:item/nature_resonance_stone"
+  }
+}

@@ -1,0 +1,36 @@
+
+{
+  "parent": "quartz_enhanced:root",
+  "display": {
+    "icon": {
+      "item": "quartz_enhanced:quartz_apple"
+    },
+    "title": {
+      "translate": "advancements.quartz_enhanced.eat_apple.title"
+    },
+    "description": {
+      "translate": "advancements.quartz_enhanced.eat_apple.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "eat_apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "quartz_enhanced:quartz_apple"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "eat_apple"
+    ]
+  ]
+}

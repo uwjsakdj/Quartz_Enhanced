@@ -1,0 +1,23 @@
+
+{
+  "display": {
+    "icon": {
+      "item": "quartz_enhanced:reinforced_quartz_ingot"
+    },
+    "title": {
+      "translate": "advancements.quartz_enhanced.root.title"
+    },
+    "description": {
+      "translate": "advancements.quartz_enhanced.root.description"
+    },
+    "background": "minecraft:textures/block/quartz_block_side.png",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

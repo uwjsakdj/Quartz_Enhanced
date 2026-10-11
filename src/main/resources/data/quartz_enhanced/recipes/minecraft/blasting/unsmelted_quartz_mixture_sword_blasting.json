@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "quartz_enhanced:reinforced_quartz_sword"
+  },
+  "result": "quartz_enhanced:reinforced_quartz_nugget",
+  "experience": 0.1,
+  "cookingtime": 100
+}

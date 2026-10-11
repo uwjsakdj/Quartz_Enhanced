@@ -1,0 +1,12 @@
+{
+  "type": "quartz_enhanced:resonance",
+  "resonance": { "item": "quartz_enhanced:nature_resonance_stone" },
+  "ingredients": [
+    { "item": "quartz_enhanced:reinforced_quartz_ingot" },
+    { "item": "quartz_enhanced:reinforced_quartz_ingot" },
+    { "item": "quartz_enhanced:reinforced_quartz_ingot" },
+    { "item": "quartz_enhanced:reinforced_quartz_ingot" }
+  ],
+  "output": { "item": "quartz_enhanced:nature_quartz_ingot", "count": 4 },
+  "time": 150
+}

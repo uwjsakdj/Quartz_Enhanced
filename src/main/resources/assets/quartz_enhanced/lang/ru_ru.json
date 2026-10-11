@@ -1,0 +1,44 @@
+{
+  "item.quartz_enhanced.reinforced_quartz_ingot": "Усиленный кварцевый слиток",
+  "item.quartz_enhanced.unsmelted_quartz_mixture": "Неплавленная кварцевая смесь",
+  "item.quartz_enhanced.quartz_apple": "Кварцевое яблоко",
+  "item.quartz_enhanced.reinforced_quartz_sword": "Усиленный кварцевый меч",
+  "item.quartz_enhanced.reinforced_quartz_nugget": "Кварцевый самородок",
+  "item.quartz_enhanced.quartz_jade": "Кварцевый нефрит",
+  "item.quartz_enhanced.reinforced_quartz_pickaxe": "Усиленная кварцевая кирка",
+  "item.quartz_enhanced.reinforced_quartz_axe": "Усиленный кварцевый топор",
+  "item.quartz_enhanced.reinforced_quartz_hoe": "Усиленная кварцевая мотыга",
+  "item.quartz_enhanced.reinforced_quartz_shovel": "Усиленная кварцевая лопата",
+  "item.quartz_enhanced.fine_quartz_jade": "Обработанный кварцевый нефрит",
+  "item.quartz_enhanced.quartz_refreshing_sweet_soup": "Кварцевый освежающий сладкий суп",
+  "item.quartz_enhanced.quartz_nether_fungus_aromatic_stew": "Ароматный кварцевый грибной суп из Незера",
+  "item.quartz_enhanced.quartz_honey_pudding": "Кварцевый медовый пудинг",
+  "item.quartz_enhanced.quartz_jade_magic_wand": "Посох из кварцевого нефрита",
+  "item.quartz_enhanced.reinforced_quartz_helmet": "Укрепленный кварцевый шлем",
+  "item.quartz_enhanced.reinforced_quartz_chestplate": "Укрепленный кварцевый нагрудник",
+  "item.quartz_enhanced.reinforced_quartz_leggings": "Укрепленные кварцевые леггинсы",
+  "item.quartz_enhanced.reinforced_quartz_boots": "Укрепленные кварцевые ботинки",
+
+  "block.quartz_enhanced.reinforced_quartz_block": "Усиленный кварцевый блок",
+
+  "tooltip.quartz_enhanced.high_performance_note": "§7Этот предмет требует высокой производительности",
+  "tooltip.quartz_enhanced.reinforced_quartz_damage": "§7Разбитый кварц наносит дополнительный урон",
+  "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "§7Разбитый кварц наносит урон врагам при контакте",
+
+  "message.quartz_enhanced.insufficient_experience": "Недостаточно опыта! Требуется минимум 45 уровень, чтобы произнести это заклинание.",
+
+  "itemGroup.quartz_enhanced_tab": "Усиленный кварц",
+
+  "advancements.quartz_enhanced.root.title": "Кварцевое усиление",
+  "advancements.quartz_enhanced.root.description": "Начни свое путешествие по кварцевому усилению",
+  "advancements.quartz_enhanced.reinforced.title": "Прочный кварц!",
+  "advancements.quartz_enhanced.reinforced.description": "Получить усиленный кварцевый слиток",
+  "advancements.quartz_enhanced.eat_apple.title": "Невкуснятина!",
+  "advancements.quartz_enhanced.eat_apple.description": "Наберись смелости и съешь кварцевое яблоко",
+  "advancement.quartz_enhanced.quartz_jade.title": "Блестяще!",
+  "advancement.quartz_enhanced.quartz_jade.description": "Скрафть один кварцевый нефрит",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.title": "Спасение от жары!",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.description": "Попробуй кварцевый освежающий сладкий суп",
+  "advancements.quartz_enhanced.wear_quartz_armor.title": "Оденься в кварц!",
+  "advancements.quartz_enhanced.wear_quartz_armor.description": "Собери полный комплект укрепленной кварцевой брони"
+}

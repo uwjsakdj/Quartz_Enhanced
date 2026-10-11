@@ -1,0 +1,44 @@
+{
+  "item.quartz_enhanced.reinforced_quartz_ingot": "증강 석영 주괴",
+  "item.quartz_enhanced.unsmelted_quartz_mixture": "미용해 석영 혼합물",
+  "item.quartz_enhanced.quartz_apple": "석영 사과",
+  "item.quartz_enhanced.reinforced_quartz_sword": "증강 석영 검",
+  "item.quartz_enhanced.reinforced_quartz_nugget": "증강 석영 조각",
+  "item.quartz_enhanced.quartz_jade": "석영 옥",
+  "item.quartz_enhanced.reinforced_quartz_pickaxe": "증강 석영 곡괭이",
+  "item.quartz_enhanced.reinforced_quartz_axe": "증강 석영 도끼",
+  "item.quartz_enhanced.reinforced_quartz_hoe": "증강 석영 괭이",
+  "item.quartz_enhanced.reinforced_quartz_shovel": "증강 석영 삽",
+  "item.quartz_enhanced.fine_quartz_jade": "정제 석영 옥",
+  "item.quartz_enhanced.quartz_refreshing_sweet_soup": "석영 청량 달콤한 수프",
+  "item.quartz_enhanced.quartz_nether_fungus_aromatic_stew": "석영 네더 버섯 향 찌개",
+  "item.quartz_enhanced.quartz_honey_pudding": "석영 꿀 푸딩",
+  "item.quartz_enhanced.quartz_jade_magic_wand": "석영 옥 지팡이",
+  "item.quartz_enhanced.reinforced_quartz_helmet": "강화 석영 투구",
+  "item.quartz_enhanced.reinforced_quartz_chestplate": "강화 석영 흉갑",
+  "item.quartz_enhanced.reinforced_quartz_leggings": "강화 석영 레깅스",
+  "item.quartz_enhanced.reinforced_quartz_boots": "강화 석영 부츠",
+
+  "block.quartz_enhanced.reinforced_quartz_block": "증강 석영 블록",
+
+  "tooltip.quartz_enhanced.high_performance_note": "§7이 아이템은 성능 요구 사항이 높습니다",
+  "tooltip.quartz_enhanced.reinforced_quartz_damage": "§7깨진 석영이 추가 피해를 입힙니다",
+  "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "§7깨진 석영이 적에게 피해를 입힙니다",
+
+  "message.quartz_enhanced.insufficient_experience": "경험이 부족합니다! 이 주문을 시전하려면 최소 45레벨이 필요합니다.",
+
+  "itemGroup.quartz_enhanced_tab": "증강·석영",
+
+  "advancements.quartz_enhanced.root.title": "석영 증강",
+  "advancements.quartz_enhanced.root.description": "석영 증강 여정을 시작하세요",
+  "advancements.quartz_enhanced.reinforced.title": "더 강한 석영!",
+  "advancements.quartz_enhanced.reinforced.description": "강화 석영 주괴를 획득하세요",
+  "advancements.quartz_enhanced.eat_apple.title": "정말 맛없어!",
+  "advancements.quartz_enhanced.eat_apple.description": "용기를 내어 석영 사과를 먹다",
+  "advancement.quartz_enhanced.quartz_jade.title": "반짝반짝!",
+  "advancement.quartz_enhanced.quartz_jade.description": "석영 옥 1개를 제작하세요",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.title": "더위를 식혀주는 최고의 음료!",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.description": "석영 청량 달콤한 수프를 마시다",
+  "advancements.quartz_enhanced.wear_quartz_armor.title": "석영을 몸에 두르다!",
+  "advancements.quartz_enhanced.wear_quartz_armor.description": "강화 석영 갑옷 풀세트를 모으세요"
+}

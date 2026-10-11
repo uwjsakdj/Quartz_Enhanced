@@ -1,0 +1,37 @@
+{
+  "parent": "quartz_enhanced:reinforced_quartz_ingot",
+  "display": {
+    "icon": {
+      "item": "quartz_enhanced:nature_quartz_ingot"
+    },
+    "title": {
+      "translate": "advancements.quartz_enhanced.nature_quartz.title"
+    },
+    "description": {
+      "translate": "advancements.quartz_enhanced.nature_quartz.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_nature_quartz_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "quartz_enhanced:nature_quartz_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nature_quartz_ingot"
+    ]
+  ]
+}

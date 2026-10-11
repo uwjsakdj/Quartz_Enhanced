@@ -1,0 +1,44 @@
+{
+  "item.quartz_enhanced.reinforced_quartz_ingot": "增強石英錠",
+  "item.quartz_enhanced.unsmelted_quartz_mixture": "尚未熔煉的石英混合物",
+  "item.quartz_enhanced.quartz_apple": "石英蘋果",
+  "item.quartz_enhanced.reinforced_quartz_sword": "增強石英劍",
+  "item.quartz_enhanced.reinforced_quartz_nugget": "增強石英粒",
+  "item.quartz_enhanced.quartz_jade": "石英玉",
+  "item.quartz_enhanced.reinforced_quartz_pickaxe": "增強石英鎬",
+  "item.quartz_enhanced.reinforced_quartz_axe": "增強石英斧",
+  "item.quartz_enhanced.reinforced_quartz_hoe": "增強石英鋤",
+  "item.quartz_enhanced.reinforced_quartz_shovel": "增強石英鏟",
+  "item.quartz_enhanced.fine_quartz_jade": "精製石英玉",
+  "item.quartz_enhanced.quartz_refreshing_sweet_soup": "石英清潤甜湯",
+  "item.quartz_enhanced.quartz_nether_fungus_aromatic_stew": "石英地獄菌香羹",
+  "item.quartz_enhanced.quartz_honey_pudding": "石英蜂蜜奶凍",
+  "item.quartz_enhanced.quartz_jade_magic_wand": "石英玉魔杖",
+  "item.quartz_enhanced.reinforced_quartz_helmet": "強化石英頭盔",
+  "item.quartz_enhanced.reinforced_quartz_chestplate": "強化石英胸甲",
+  "item.quartz_enhanced.reinforced_quartz_leggings": "強化石英護腿",
+  "item.quartz_enhanced.reinforced_quartz_boots": "強化石英靴子",
+
+  "block.quartz_enhanced.reinforced_quartz_block": "增強石英塊",
+
+  "tooltip.quartz_enhanced.high_performance_note": "§7此物品性能需求較高",
+  "tooltip.quartz_enhanced.reinforced_quartz_damage": "§7破碎的石英可以帶來更高的傷害",
+  "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "§7破碎的石英會對敵人帶來傷害",
+
+  "message.quartz_enhanced.insufficient_experience": "經驗不足！需要至少45級經驗才能釋放此法術。",
+
+  "itemGroup.quartz_enhanced_tab": "增強·石英",
+
+  "advancements.quartz_enhanced.root.title": "石英增強",
+  "advancements.quartz_enhanced.root.description": "開始你的石英增強之旅",
+  "advancements.quartz_enhanced.reinforced.title": "更強的石英！",
+  "advancements.quartz_enhanced.reinforced.description": "獲得強化石英錠",
+  "advancements.quartz_enhanced.eat_apple.title": "真是難吃！",
+  "advancements.quartz_enhanced.eat_apple.description": "鼓起勇氣吃下了石英蘋果",
+  "advancement.quartz_enhanced.quartz_jade.title": "亮閃閃！",
+  "advancement.quartz_enhanced.quartz_jade.description": "合成一顆石英玉",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.title": "解暑神飲！",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.description": "食用石英清潤甜湯",
+  "advancements.quartz_enhanced.wear_quartz_armor.title": "把石英穿上身！",
+  "advancements.quartz_enhanced.wear_quartz_armor.description": "集齊一整套強化石英盔甲"
+}

@@ -1,0 +1,42 @@
+
+{
+  "parent": "quartz_enhanced:root",
+  "display": {
+    "icon": {
+      "item": "quartz_enhanced:quartz_jade"
+    },
+    "title": {
+      "translate": "advancement.quartz_enhanced.quartz_jade.title"
+    },
+    "description": {
+      "translate": "advancement.quartz_enhanced.quartz_jade.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "have_quartz_jade": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "quartz_enhanced:quartz_jade"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have_quartz_jade"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

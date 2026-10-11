@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "recipe_book_tab": "meals",
+        "ingredients": [
+          {
+            "item": "minecraft:honey_bottle"
+          },
+          [
+            {
+              "item": "minecraft:milk_bucket"
+            },
+            {
+              "item": "farmersdelight:milk_bottle"
+            }
+          ],
+          {
+            "item": "minecraft:quartz"
+          },
+          {
+            "item": "minecraft:dandelion"
+          }
+        ],
+        "result": {
+          "item": "quartz_enhanced:quartz_honey_pudding"
+        },
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "experience": 0.35,
+        "cookingtime": 200
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "item.quartz_enhanced.reinforced_quartz_ingot": "Reinforced Quartz Ingot",
+  "item.quartz_enhanced.unsmelted_quartz_mixture": "Unsmelted Quartz Mixture",
+  "item.quartz_enhanced.quartz_apple":"Quartz Apple",
+  "item.quartz_enhanced.reinforced_quartz_sword":"Reinforced Quartz Sword",
+  "item.quartz_enhanced.reinforced_quartz_nugget": "Reinforced Quartz Nugget",
+  "item.quartz_enhanced.quartz_jade": "Quartz Jade",
+  "item.quartz_enhanced.reinforced_quartz_pickaxe":"Reinforced Quartz Pickaxe",
+  "item.quartz_enhanced.reinforced_quartz_axe":"Reinforced Quartz Axe",
+  "item.quartz_enhanced.reinforced_quartz_hoe":"Reinforced Quartz Hoe",
+  "item.quartz_enhanced.reinforced_quartz_shovel":"Reinforced Quartz Shovel",
+  "item.quartz_enhanced.fine_quartz_jade": "Fine Quartz Jade",
+  "item.quartz_enhanced.quartz_refreshing_sweet_soup": "Quartz Refreshing Sweet Soup",
+  "item.quartz_enhanced.quartz_nether_fungus_aromatic_stew": "Quartz Refreshing Sweet Soup",
+  "item.quartz_enhanced.quartz_honey_pudding": "Quartz Honey Pudding",
+  "item.quartz_enhanced.quartz_jade_magic_wand": "Quartz Jade Magic Wand",
+  "item.quartz_enhanced.reinforced_quartz_helmet": "Reinforced Quartz Helmet",
+  "item.quartz_enhanced.reinforced_quartz_chestplate": "Reinforced Quartz Chestplate",
+  "item.quartz_enhanced.reinforced_quartz_leggings": "Reinforced Quartz Leggings",
+  "item.quartz_enhanced.reinforced_quartz_boots": "Reinforced Quartz Boots",
+  "item.quartz_enhanced.resonance_stone": "Resonance Stone",
+  "item.quartz_enhanced.nature_resonance_stone": "Nature Resonance Stone",
+  "item.quartz_enhanced.nature_quartz_ingot": "Nature Quartz Ingot",
+  "item.quartz_enhanced.nature_quartz_nugget": "Reinforced Quartz Nugget",
+  "item.quartz_enhanced.nature_quartz_sword":"Nature Quartz Sword",
+  "item.quartz_enhanced.nature_quartz_axe":"Nature Quartz Axe",
+  "item.quartz_enhanced.nature_quartz_pickaxe":"Nature Quartz Pickaxe",
+  "item.quartz_enhanced.nature_quartz_shovel":"Nature Quartz Shovel",
+  "item.quartz_enhanced.reinforced_quartz_knife": "Reinforced Quartz Knife",
+  "item.quartz_enhanced.quartz_powder": "Quartz Powder",
+
+  "container.quartz_enhanced.resonance_workbench": "Resonance Workbench",
+
+  "block.quartz_enhanced.reinforced_quartz_block": "Reinforced Quartz Block",
+  "block.quartz_enhanced.resonance_workbench": "Resonance Workbench",
+
+  "tooltip.quartz_enhanced.high_performance_note": "§7High performance requirements",
+  "tooltip.quartz_enhanced.reinforced_quartz_damage": "§7Shattered quartz grants increased damage",
+  "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "Shattered quartz deals damage to enemies",
+  "tooltip.quartz_enhanced.fd_missing": "Install Farmer's Delight to unlock more features",
+
+  "itemGroup.quartz_enhanced_tab": "Quartz enhanced Tab",
+
+  "sound.quartz_enhanced.quartz_crush": "石英：磨碎",
+
+  "message.quartz_enhanced.insufficient_experience": "Insufficient experience! You need at least level 45 to cast this spell.",
+
+  "advancements.quartz_enhanced.root.title": "Quartz Enhanced",
+  "advancements.quartz_enhanced.root.description": "Begin your journey of quartz enhancement",
+  "advancements.quartz_enhanced.reinforced.title": "Stronger Quartz!",
+  "advancements.quartz_enhanced.reinforced.description": "Obtain a Reinforced Quartz Ingot",
+  "advancements.quartz_enhanced.eat_apple.title": "Truly Disgusting!",
+  "advancements.quartz_enhanced.eat_apple.description": "Eat a Quartz Apple and regret it",
+  "advancement.quartz_enhanced.quartz_jade.title": "Sparkling!",
+  "advancement.quartz_enhanced.quartz_jade.description": "Synthesize a Quartz Jade",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.title": "Refreshing Nectar!",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.description": "Eat Quartz Refreshing Sweet Soup",
+  "advancements.quartz_enhanced.wear_quartz_armor.title": "Quartz on Your Body!",
+  "advancements.quartz_enhanced.wear_quartz_armor.description": "Collect a full set of reinforced quartz armor",
+  "advancements.quartz_enhanced.nature_quartz.title": "Power of Nature",
+  "advancements.quartz_enhanced.nature_quartz.description": "Obtain a Nature Quartz Ingot",
+
+
+  "jei.quartz_enhanced.quartz_powder.info": "Right-click Obsidian with Quartz to start grinding. Quartz Powder is obtained after 2 seconds.\nMovement speed is greatly reduced during grinding. Switching items or moving away will cancel.",
+  "jei.quartz_enhanced.resonance": "Resonance"
+}

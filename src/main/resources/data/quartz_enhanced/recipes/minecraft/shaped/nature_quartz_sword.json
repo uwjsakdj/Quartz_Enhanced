@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " N ",
+    " N ",
+    " S "
+  ],
+  "key": {
+    "N": {
+      "item": "quartz_enhanced:nature_quartz_ingot"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "quartz_enhanced:nature_quartz_sword",
+    "count": 1
+  }
+}

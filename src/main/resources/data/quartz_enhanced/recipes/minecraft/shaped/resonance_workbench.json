@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Q",
+    "D",
+    "I"
+  ],
+  "key": {
+    "Q": { "item": "minecraft:quartz" },
+    "D": { "item": "minecraft:diamond" },
+    "I": { "item": "minecraft:iron_block" }
+  },
+  "result": {
+    "item": "quartz_enhanced:resonance_workbench",
+    "count": 1
+  }
+}
