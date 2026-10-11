@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "botania"
+        }
+      ],
+      "recipe": {
+        "type": "botania:mana_infusion",
+        "input": {
+          "item": "quartz_enhanced:reinforced_quartz_ingot"
+        },
+        "output": {
+          "item": "quartz_enhanced:nature_quartz_ingot"
+        },
+        "mana": 50000,
+        "catalyst": {
+          "type": "block",
+          "block": "botania:alchemy_catalyst"
+        }
+      }
+    }
+  ]
+}

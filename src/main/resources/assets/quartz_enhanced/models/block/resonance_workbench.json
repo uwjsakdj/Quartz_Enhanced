@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "quartz_enhanced:block/resonance_workbench_side",
+    "bottom": "quartz_enhanced:block/resonance_workbench_side",
+    "top": "quartz_enhanced:block/resonance_workbench_top",
+    "particle": "quartz_enhanced:block/resonance_workbench_side"
+  }
+}

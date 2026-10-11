@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "reinforced_quartz_armor",
+  "pattern": [
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "quartz_enhanced:reinforced_quartz_ingot"
+    }
+  },
+  "result": {
+    "item": "quartz_enhanced:reinforced_quartz_boots",
+    "count": 1
+  }
+}

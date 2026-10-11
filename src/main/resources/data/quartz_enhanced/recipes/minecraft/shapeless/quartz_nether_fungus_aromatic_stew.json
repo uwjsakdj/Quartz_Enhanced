@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:warped_fungus"
+    },
+    {
+      "item": "minecraft:crimson_fungus"
+    },
+    {
+      "item": "minecraft:quartz"
+    }
+  ],
+  "result": {
+    "item": "quartz_enhanced:quartz_nether_fungus_aromatic_stew",
+    "count": 1
+  }
+}

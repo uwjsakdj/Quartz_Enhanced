@@ -1,0 +1,66 @@
+{
+  "item.quartz_enhanced.reinforced_quartz_ingot": "增强石英锭",
+  "item.quartz_enhanced.unsmelted_quartz_mixture": "尚未熔炼的石英混合物",
+  "item.quartz_enhanced.quartz_apple":"石英苹果",
+  "item.quartz_enhanced.reinforced_quartz_sword":"增强石英剑",
+  "item.quartz_enhanced.reinforced_quartz_nugget": "增强石英粒",
+  "item.quartz_enhanced.quartz_jade": "石英玉",
+  "item.quartz_enhanced.reinforced_quartz_pickaxe":"增强石英镐",
+  "item.quartz_enhanced.reinforced_quartz_axe":"增强石英斧",
+  "item.quartz_enhanced.reinforced_quartz_hoe":"增强石英锄",
+  "item.quartz_enhanced.reinforced_quartz_shovel":"增强石英锹",
+  "item.quartz_enhanced.fine_quartz_jade": "精细石英玉",
+  "item.quartz_enhanced.quartz_refreshing_sweet_soup": "石英清润甜汤",
+  "item.quartz_enhanced.quartz_nether_fungus_aromatic_stew": "石英下界菌香羹",
+  "item.quartz_enhanced.quartz_honey_pudding": "石英蜂蜜奶冻",
+  "item.quartz_enhanced.quartz_jade_magic_wand": "石英玉魔杖",
+  "item.quartz_enhanced.reinforced_quartz_helmet": "强化石英头盔",
+  "item.quartz_enhanced.reinforced_quartz_chestplate": "强化石英胸甲",
+  "item.quartz_enhanced.reinforced_quartz_leggings": "强化石英护腿",
+  "item.quartz_enhanced.reinforced_quartz_boots": "强化石英靴子",
+  "item.quartz_enhanced.resonance_stone": "共鸣石",
+  "item.quartz_enhanced.nature_resonance_stone": "自然共鸣石",
+  "item.quartz_enhanced.nature_quartz_ingot": "自然石英锭",
+  "item.quartz_enhanced.nature_quartz_nugget": "自然石英粒",
+  "item.quartz_enhanced.nature_quartz_sword":"自然石英剑",
+  "item.quartz_enhanced.reinforced_quartz_knife": "强化石英刀",
+  "item.quartz_enhanced.quartz_powder": "下界石英粉",
+  "item.quartz_enhanced.nature_quartz_axe":"自然石英斧",
+  "item.quartz_enhanced.nature_quartz_pickaxe":"自然石英镐",
+  "item.quartz_enhanced.nature_quartz_shovel":"自然石英锹",
+
+
+  "container.quartz_enhanced.resonance_workbench": "共鸣工作台",
+
+  "block.quartz_enhanced.reinforced_quartz_block": "增强石英块",
+  "block.quartz_enhanced.resonance_workbench": "共鸣工作台",
+
+  "tooltip.quartz_enhanced.high_performance_note": "§7此物品性能需求较高",
+  "tooltip.quartz_enhanced.reinforced_quartz_damage": "§7破碎的石英可以带来更高的伤害",
+  "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "破碎的石英会对敌人带来伤害",
+  "tooltip.quartz_enhanced.fd_missing": "安装农夫乐事解锁更多功能",
+
+  "message.quartz_enhanced.insufficient_experience": "经验不足！需要至少45级经验才能释放此法术。",
+
+  "itemGroup.quartz_enhanced_tab": "增强·石英",
+
+  "sound.quartz_enhanced.quartz_crush": "石英：磨碎",
+
+  "advancements.quartz_enhanced.root.title": "石英增强",
+  "advancements.quartz_enhanced.root.description": "开始你的石英增强之旅",
+  "advancements.quartz_enhanced.reinforced.title": "更强的石英！",
+  "advancements.quartz_enhanced.reinforced.description": "获得强化石英锭",
+  "advancements.quartz_enhanced.eat_apple.title": "真是难吃！",
+  "advancements.quartz_enhanced.eat_apple.description": "鼓起勇气吃下了石英苹果",
+  "advancement.quartz_enhanced.quartz_jade.title": "亮闪闪！",
+  "advancement.quartz_enhanced.quartz_jade.description": "合成一颗石英玉",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.title": "解暑神饮！",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.description": "食用石英清润甜汤",
+  "advancements.quartz_enhanced.wear_quartz_armor.title": "把石英穿上身！",
+  "advancements.quartz_enhanced.wear_quartz_armor.description": "集齐一整套强化石英盔甲",
+  "advancements.quartz_enhanced.nature_quartz.title": "自然之力",
+  "advancements.quartz_enhanced.nature_quartz.description": "获得自然石英锭",
+
+  "jei.quartz_enhanced.quartz_powder.info": "手持石英右键黑曜石，2秒后自动研磨获得石英粉。\n研磨期间移速大幅降低，切换物品或远离黑曜石会中断研磨。",
+  "jei.quartz_enhanced.resonance": "共鸣"
+}

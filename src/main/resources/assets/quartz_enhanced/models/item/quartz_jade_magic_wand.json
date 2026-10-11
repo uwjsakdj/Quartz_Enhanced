@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "quartz_enhanced:item/quartz_jade_magic_wand"
+  }
+}

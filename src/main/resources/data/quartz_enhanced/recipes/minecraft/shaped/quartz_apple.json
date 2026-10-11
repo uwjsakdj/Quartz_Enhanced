@@ -1,0 +1,21 @@
+
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "QQQ",
+    "QAQ",
+    "QQQ"
+  ],
+  "key": {
+    "Q": {
+      "item": "minecraft:quartz"
+    },
+    "A": {
+      "item": "minecraft:apple"
+    }
+  },
+  "result": {
+    "item": "quartz_enhanced:quartz_apple",
+    "count": 1
+  }
+}

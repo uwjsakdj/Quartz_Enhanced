@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "  F",
+    " Q ",
+    "S  "
+  ],
+  "key": {
+    "F": {
+      "item": "quartz_enhanced:fine_quartz_jade"
+    },
+    "Q": {
+      "item": "minecraft:quartz"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "quartz_enhanced:quartz_jade_magic_wand",
+    "count": 1
+  }
+}

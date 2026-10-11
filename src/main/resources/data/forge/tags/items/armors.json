@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "quartz_enhanced:reinforced_quartz_helmet",
+    "quartz_enhanced:reinforced_quartz_chestplate",
+    "quartz_enhanced:reinforced_quartz_leggings",
+    "quartz_enhanced:reinforced_quartz_boots"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "reinforced_quartz_armor",
+  "pattern": [
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "quartz_enhanced:reinforced_quartz_ingot"
+    }
+  },
+  "result": {
+    "item": "quartz_enhanced:reinforced_quartz_chestplate",
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "quartz_enhanced:block/reinforced_quartz_block"
+  }
+}

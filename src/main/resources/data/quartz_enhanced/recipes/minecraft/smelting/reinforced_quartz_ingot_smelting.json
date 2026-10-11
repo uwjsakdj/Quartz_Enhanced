@@ -1,0 +1,10 @@
+
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "quartz_enhanced:unsmelted_quartz_mixture"
+  },
+  "result": "quartz_enhanced:reinforced_quartz_ingot",
+  "experience": 0.4,
+  "cookingtime": 350
+}

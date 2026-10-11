@@ -1,0 +1,44 @@
+{
+  "item.quartz_enhanced.reinforced_quartz_ingot": "増強石英インゴット",
+  "item.quartz_enhanced.unsmelted_quartz_mixture": "未精錬石英混合物",
+  "item.quartz_enhanced.quartz_apple": "石英リンゴ",
+  "item.quartz_enhanced.reinforced_quartz_sword": "増強石英剣",
+  "item.quartz_enhanced.reinforced_quartz_nugget": "増強石英ナゲット",
+  "item.quartz_enhanced.quartz_jade": "石英玉",
+  "item.quartz_enhanced.reinforced_quartz_pickaxe": "増強石英ツルハシ",
+  "item.quartz_enhanced.reinforced_quartz_axe": "増強石英斧",
+  "item.quartz_enhanced.reinforced_quartz_hoe": "増強石英クワ",
+  "item.quartz_enhanced.reinforced_quartz_shovel": "増強石英シャベル",
+  "item.quartz_enhanced.fine_quartz_jade": "精製石英玉",
+  "item.quartz_enhanced.quartz_refreshing_sweet_soup": "石英清涼スイートスープ",
+  "item.quartz_enhanced.quartz_nether_fungus_aromatic_stew": "石英のネザーキノコ香るシチュー",
+  "item.quartz_enhanced.quartz_honey_pudding": "石英ハニープリン",
+  "item.quartz_enhanced.quartz_jade_magic_wand": "石英玉の杖",
+  "item.quartz_enhanced.reinforced_quartz_helmet": "強化石英ヘルメット",
+  "item.quartz_enhanced.reinforced_quartz_chestplate": "強化石英チェストプレート",
+  "item.quartz_enhanced.reinforced_quartz_leggings": "強化石英レギンス",
+  "item.quartz_enhanced.reinforced_quartz_boots": "強化石英ブーツ",
+
+  "block.quartz_enhanced.reinforced_quartz_block": "増強石英ブロック",
+
+  "tooltip.quartz_enhanced.high_performance_note": "§7このアイテムは性能要件が高めです",
+  "tooltip.quartz_enhanced.reinforced_quartz_damage": "§7砕けた石英が追加ダメージを与えます",
+  "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "§7砕けた石英が敵にダメージを与えます",
+
+  "message.quartz_enhanced.insufficient_experience": "経験値が足りません！この呪文を発動するにはレベル45以上が必要です。",
+
+  "itemGroup.quartz_enhanced_tab": "増強・石英",
+
+  "advancements.quartz_enhanced.root.title": "石英増強",
+  "advancements.quartz_enhanced.root.description": "石英増強の旅を始めよう",
+  "advancements.quartz_enhanced.reinforced.title": "より強い石英！",
+  "advancements.quartz_enhanced.reinforced.description": "強化石英インゴットを入手する",
+  "advancements.quartz_enhanced.eat_apple.title": "まずすぎる！",
+  "advancements.quartz_enhanced.eat_apple.description": "勇気を出して石英リンゴを食べる",
+  "advancement.quartz_enhanced.quartz_jade.title": "キラキラ！",
+  "advancement.quartz_enhanced.quartz_jade.description": "石英玉を1つクラフトする",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.title": "夏バテ解消の神ドリンク！",
+  "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.description": "石英清涼スイートスープを飲む",
+  "advancements.quartz_enhanced.wear_quartz_armor.title": "石英を身にまとえ！",
+  "advancements.quartz_enhanced.wear_quartz_armor.description": "強化石英アーマーをフルセット揃える"
+}

@@ -1,0 +1,76 @@
+{
+  "parent": "quartz_enhanced:reinforced_quartz_ingot",
+  "display": {
+    "icon": {
+      "item": "quartz_enhanced:reinforced_quartz_chestplate"
+    },
+    "title": {
+      "translate": "advancements.quartz_enhanced.wear_quartz_armor.title"
+    },
+    "description": {
+      "translate": "advancements.quartz_enhanced.wear_quartz_armor.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "quartz_enhanced:reinforced_quartz_helmet"
+            ]
+          }
+        ]
+      }
+    },
+    "has_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "quartz_enhanced:reinforced_quartz_chestplate"
+            ]
+          }
+        ]
+      }
+    },
+    "has_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "quartz_enhanced:reinforced_quartz_leggings"
+            ]
+          }
+        ]
+      }
+    },
+    "has_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "quartz_enhanced:reinforced_quartz_boots"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_helmet",
+      "has_chestplate",
+      "has_leggings",
+      "has_boots"
+    ]
+  ]
+}

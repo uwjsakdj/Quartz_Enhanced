@@ -1,0 +1,19 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "quartz_enhanced:quartz_powder"
+    },
+    {
+      "item": "quartz_enhanced:quartz_powder"
+    },
+    {
+      "item": "quartz_enhanced:quartz_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:quartz"
+    }
+  ]
+}

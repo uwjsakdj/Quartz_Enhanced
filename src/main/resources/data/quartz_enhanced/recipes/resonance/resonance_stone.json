@@ -1,0 +1,12 @@
+{
+  "type": "quartz_enhanced:resonance",
+  "resonance": { "item": "minecraft:echo_shard" },
+  "ingredients": [
+    { "item": "minecraft:quartz" },
+    { "item": "minecraft:quartz" },
+    { "item": "minecraft:amethyst_shard" },
+    { "item": "minecraft:amethyst_shard" }
+  ],
+  "output": { "item": "quartz_enhanced:resonance_stone", "count": 1 },
+  "time": 200
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " Q ",
+    " S "
+  ],
+  "key": {
+    "Q": {
+      "item": "quartz_enhanced:reinforced_quartz_ingot"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "quartz_enhanced:reinforced_quartz_knife",
+    "count": 1
+  }
+}

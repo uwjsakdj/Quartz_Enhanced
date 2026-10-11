@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "quartz_enhanced:nature_quartz_nugget"
+    }
+  },
+  "result": {
+    "item": "quartz_enhanced:nature_quartz_ingot",
+    "count": 1
+  }
+}

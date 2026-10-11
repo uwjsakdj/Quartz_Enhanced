@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "quartz_enhanced:block/reinforced_quartz_block"
+    }
+  }
+}

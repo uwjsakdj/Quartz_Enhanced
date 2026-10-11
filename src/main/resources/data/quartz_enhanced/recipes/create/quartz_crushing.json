@@ -1,0 +1,11 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    { "item": "minecraft:quartz" }
+  ],
+  "results": [
+    { "item": "quartz_enhanced:quartz_powder", "count": 3 },
+    { "item": "quartz_enhanced:quartz_powder", "chance": 0.25 }
+  ],
+  "processingTime": 250
+}

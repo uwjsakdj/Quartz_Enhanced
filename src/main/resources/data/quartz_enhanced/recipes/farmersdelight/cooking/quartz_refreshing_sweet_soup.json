@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "recipe_book_tab": "drinks",
+        "ingredients": [
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "item": "minecraft:quartz"
+          },
+          [
+            {
+              "type": "forge:nbt",
+              "item": "minecraft:potion",
+              "nbt": "{Potion:\"minecraft:water\"}"
+            },
+            {
+              "item": "minecraft:water_bucket"
+            }
+          ]
+        ],
+        "result": {
+          "item": "quartz_enhanced:quartz_refreshing_sweet_soup"
+        },
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "experience": 0.25,
+        "cookingtime": 160
+      }
+    }
+  ]
+}
