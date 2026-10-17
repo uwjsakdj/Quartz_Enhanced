@@ -54,6 +54,10 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.NATURE_QUARTZ_SHOVEL.get());
                         pOutput.accept(ModItems.NATURE_QUARTZ_HOE.get());
                         pOutput.accept(ModItems.NATURE_QUARTZ_KNIFE.get());
+                        pOutput.accept(ModItems.NATURE_QUARTZ_HELMET.get());
+                        pOutput.accept(ModItems.NATURE_QUARTZ_CHESTPLATE.get());
+                        pOutput.accept(ModItems.NATURE_QUARTZ_LEGGINGS.get());
+                        pOutput.accept(ModItems.NATURE_QUARTZ_BOOTS.get());
 
                     }).build());
 
