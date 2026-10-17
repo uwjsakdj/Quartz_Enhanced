@@ -6,10 +6,10 @@
       "item": "quartz_enhanced:quartz_jade"
     },
     "title": {
-      "translate": "advancement.quartz_enhanced.quartz_jade.title"
+      "translate": "advancements.quartz_enhanced.quartz_jade.title"
     },
     "description": {
-      "translate": "advancement.quartz_enhanced.quartz_jade.description"
+      "translate": "advancements.quartz_enhanced.quartz_jade.description"
     },
     "frame": "challenge",
     "show_toast": true,

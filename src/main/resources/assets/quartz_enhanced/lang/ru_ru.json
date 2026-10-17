@@ -18,16 +18,40 @@
   "item.quartz_enhanced.reinforced_quartz_chestplate": "Укрепленный кварцевый нагрудник",
   "item.quartz_enhanced.reinforced_quartz_leggings": "Укрепленные кварцевые леггинсы",
   "item.quartz_enhanced.reinforced_quartz_boots": "Укрепленные кварцевые ботинки",
+  "item.quartz_enhanced.resonance_stone": "Резонансный камень",
+  "item.quartz_enhanced.nature_resonance_stone": "Природный резонансный камень",
+  "item.quartz_enhanced.nature_quartz_ingot": "Природный кварцевый слиток",
+  "item.quartz_enhanced.nature_quartz_nugget": "Природный кварцевый самородок",
+  "item.quartz_enhanced.nature_quartz_sword": "Природный кварцевый меч",
+  "item.quartz_enhanced.reinforced_quartz_knife": "Усиленный кварцевый нож",
+  "item.quartz_enhanced.quartz_powder": "Кварцевая пыль",
+  "item.quartz_enhanced.nature_quartz_axe": "Природный кварцевый топор",
+  "item.quartz_enhanced.nature_quartz_pickaxe": "Природная кварцевая кирка",
+  "item.quartz_enhanced.nature_quartz_shovel": "Природная кварцевая лопата",
+  "item.quartz_enhanced.nature_quartz_hoe": "Природная кварцевая мотыга",
+  "item.quartz_enhanced.nature_quartz_knife": "Природный кварцевый нож",
+  "item.quartz_enhanced.nature_quartz_helmet": "Природный кварцевый шлем",
+  "item.quartz_enhanced.nature_quartz_chestplate": "Природный кварцевый нагрудник",
+  "item.quartz_enhanced.nature_quartz_leggings": "Природные кварцевые леггинсы",
+  "item.quartz_enhanced.nature_quartz_boots": "Природные кварцевые ботинки",
+
+  "container.quartz_enhanced.resonance_workbench": "Резонансный верстак",
 
   "block.quartz_enhanced.reinforced_quartz_block": "Усиленный кварцевый блок",
+  "block.quartz_enhanced.nature_quartz_block": "Природный кварцевый блок",
+  "block.quartz_enhanced.resonance_workbench": "Резонансный верстак",
 
   "tooltip.quartz_enhanced.high_performance_note": "§7Этот предмет требует высокой производительности",
   "tooltip.quartz_enhanced.reinforced_quartz_damage": "§7Разбитый кварц наносит дополнительный урон",
   "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "§7Разбитый кварц наносит урон врагам при контакте",
+  "tooltip.quartz_enhanced.fd_missing": "Установите Farmer's Delight, чтобы открыть больше функций",
+  "tooltip.quartz_enhanced.armor.nature_quartz.desc": "Броня, наполненная жизненной силой природы",
 
   "message.quartz_enhanced.insufficient_experience": "Недостаточно опыта! Требуется минимум 45 уровень, чтобы произнести это заклинание.",
 
   "itemGroup.quartz_enhanced_tab": "Усиленный кварц",
+
+  "sound.quartz_enhanced.quartz_crush": "Кварц: измельчение",
 
   "advancements.quartz_enhanced.root.title": "Кварцевое усиление",
   "advancements.quartz_enhanced.root.description": "Начни свое путешествие по кварцевому усилению",
@@ -35,10 +59,17 @@
   "advancements.quartz_enhanced.reinforced.description": "Получить усиленный кварцевый слиток",
   "advancements.quartz_enhanced.eat_apple.title": "Невкуснятина!",
   "advancements.quartz_enhanced.eat_apple.description": "Наберись смелости и съешь кварцевое яблоко",
-  "advancement.quartz_enhanced.quartz_jade.title": "Блестяще!",
-  "advancement.quartz_enhanced.quartz_jade.description": "Скрафть один кварцевый нефрит",
+  "advancements.quartz_enhanced.quartz_jade.title": "Блестяще!",
+  "advancements.quartz_enhanced.quartz_jade.description": "Скрафть один кварцевый нефрит",
   "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.title": "Спасение от жары!",
   "advancements.quartz_enhanced.quartz_refreshing_sweet_soup.description": "Попробуй кварцевый освежающий сладкий суп",
   "advancements.quartz_enhanced.wear_quartz_armor.title": "Оденься в кварц!",
-  "advancements.quartz_enhanced.wear_quartz_armor.description": "Собери полный комплект укрепленной кварцевой брони"
+  "advancements.quartz_enhanced.wear_quartz_armor.description": "Собери полный комплект укрепленной кварцевой брони",
+  "advancements.quartz_enhanced.nature_quartz.title": "Сила природы",
+  "advancements.quartz_enhanced.nature_quartz.description": "Получить природный кварцевый слиток",
+  "advancements.quartz_enhanced.nature_armor.title": "Оживленный",
+  "advancements.quartz_enhanced.nature_armor.description": "Жизненная сила природы не только дала жизнь слитку, но и стала твоей надежной защитой.",
+
+  "jei.quartz_enhanced.quartz_powder.info": "Возьмите кварц в руку и нажмите ПКМ по обсидиану, через 2 секунды начнется автоматическое измельчение. \nВо время измельчения скорость передвижения сильно снижается. Переключение предмета или отход от обсидиана прервет процесс.",
+  "jei.quartz_enhanced.resonance": "Резонанс"
 }
