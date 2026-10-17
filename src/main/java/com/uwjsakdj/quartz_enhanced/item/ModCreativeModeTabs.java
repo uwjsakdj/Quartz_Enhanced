@@ -53,6 +53,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.NATURE_QUARTZ_PICKAXE.get());
                         pOutput.accept(ModItems.NATURE_QUARTZ_SHOVEL.get());
                         pOutput.accept(ModItems.NATURE_QUARTZ_HOE.get());
+                        pOutput.accept(ModItems.NATURE_QUARTZ_KNIFE.get());
 
                     }).build());
 
