@@ -87,6 +87,14 @@ public class ModItems {
             ITEMS.register("nature_quartz_hoe", NatureQuartzHoe::new);
     public static final RegistryObject<Item> NATURE_QUARTZ_KNIFE =
             ITEMS.register("nature_quartz_knife", NatureQuartzKnife::new);
+    public static final RegistryObject<Item> NATURE_QUARTZ_HELMET = ITEMS.register("nature_quartz_helmet",
+            () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> NATURE_QUARTZ_CHESTPLATE = ITEMS.register("nature_quartz_chestplate",
+            () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> NATURE_QUARTZ_LEGGINGS = ITEMS.register("nature_quartz_leggings",
+            () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> NATURE_QUARTZ_BOOTS = ITEMS.register("nature_quartz_boots",
+            () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

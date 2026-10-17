@@ -30,6 +30,10 @@
   "item.quartz_enhanced.reinforced_quartz_knife": "Reinforced Quartz Knife",
   "item.quartz_enhanced.quartz_powder": "Quartz Powder",
   "item.quartz_enhanced.nature_quartz_knife":"Nature Quartz Knife",
+  "item.quartz_enhanced.nature_quartz_helmet": "Nature Quartz Helmet",
+  "item.quartz_enhanced.nature_quartz_chestplate": "Nature Quartz Chestplate",
+  "item.quartz_enhanced.nature_quartz_leggings": "Nature Quartz Leggings",
+  "item.quartz_enhanced.nature_quartz_boots": "Nature Quartz Boots",
 
   "container.quartz_enhanced.resonance_workbench": "Resonance Workbench",
 
@@ -40,6 +44,7 @@
   "tooltip.quartz_enhanced.reinforced_quartz_damage": "§7Shattered quartz grants increased damage",
   "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "Shattered quartz deals damage to enemies",
   "tooltip.quartz_enhanced.fd_missing": "Install Farmer's Delight to unlock more features",
+  "tooltip.quartz_enhanced.armor.nature_quartz.desc": "A living armor brimming with natural vitality",
 
   "itemGroup.quartz_enhanced_tab": "Quartz enhanced Tab",
 

@@ -9,17 +9,30 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    // 强化石英套：耐久低于10时触发7点额外伤害
+    // 强化石英套：耐久低于10时触发7点额外反伤
     REINFORCED_QUARTZ(
             "reinforced_quartz",
-            35,                     // 耐久乘数：11*35=385 / 16*35=560 / 15*35=525 / 13*35=455
-            15,
+            35,                     // 耐久乘数
+            15,                     // 附魔能力
             SoundEvents.ARMOR_EQUIP_NETHERITE,
-            3.0F,                   // 单部位盔甲韧性 3
-            0.0F,                   // 取消下界合金级击退抗性，改为普通盔甲水平
+            3.0F,                   // 盔甲韧性
+            0.0F,                   // 击退抗性
             () -> Ingredient.of(ModItems.REINFORCED_QUARTZ_INGOT.get()),
-            10,
-            7.0F
+            10,                     // 触发反伤的耐久阈值
+            7.0F                    // 反伤伤害
+    ),
+
+    // 自然石英套：无低耐反伤，生命值加成由物品类处理
+    NATURE_QUARTZ(
+            "nature_quartz",
+            35,                     // 耐久乘数，与强化石英相同
+            15,                     // 附魔能力
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F,                   // 盔甲韧性
+            0.0F,                   // 击退抗性
+            () -> Ingredient.of(ModItems.NATURE_QUARTZ_INGOT.get()), // 修复材料
+            -1,                     // 负数阈值，永不触发低耐反伤
+            0.0F                    // 无额外反伤伤害
     );
 
     // 基础属性
@@ -32,8 +45,8 @@ public enum ModArmorMaterials implements ArmorMaterial {
     private final Supplier<Ingredient> repairIngredient;
 
     // 特效参数
-    private final int effectDurabilityThreshold; // 触发特效的剩余耐久阈值
-    private final float bonusAttackDamage;       // 额外附加伤害
+    private final int effectDurabilityThreshold;
+    private final float bonusAttackDamage;
 
     // 对应部位顺序：头盔、胸甲、护腿、靴子
     private static final int[] BASE_DURABILITY = {11, 16, 15, 13};

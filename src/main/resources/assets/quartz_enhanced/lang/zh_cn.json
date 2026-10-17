@@ -30,6 +30,10 @@
   "item.quartz_enhanced.nature_quartz_shovel":"自然石英锹",
   "item.quartz_enhanced.nature_quartz_hoe":"自然石英锄",
   "item.quartz_enhanced.nature_quartz_knife":"增强石英刀",
+  "item.quartz_enhanced.nature_quartz_helmet": "自然石英头盔",
+  "item.quartz_enhanced.nature_quartz_chestplate": "自然石英胸甲",
+  "item.quartz_enhanced.nature_quartz_leggings": "自然石英护腿",
+  "item.quartz_enhanced.nature_quartz_boots": "自然石英靴子",
 
 
   "container.quartz_enhanced.resonance_workbench": "共鸣工作台",
@@ -41,6 +45,7 @@
   "tooltip.quartz_enhanced.reinforced_quartz_damage": "§7破碎的石英可以带来更高的伤害",
   "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "破碎的石英会对敌人带来伤害",
   "tooltip.quartz_enhanced.fd_missing": "安装农夫乐事解锁更多功能",
+  "tooltip.quartz_enhanced.armor.nature_quartz.desc": "蕴含自然生命力的盔甲",
 
   "message.quartz_enhanced.insufficient_experience": "经验不足！需要至少45级经验才能释放此法术。",
 

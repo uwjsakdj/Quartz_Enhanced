@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "quartz_enhanced:reinforced_quartz_helmet"
+    "quartz_enhanced:reinforced_quartz_helmet",
+    "quartz_enhanced:nature_quartz_helmet"
   ]
 }
