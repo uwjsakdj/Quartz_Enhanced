@@ -1,5 +1,5 @@
 {
-  "parent": "quartz_enhanced:reinforced_quartz_ingot",
+  "parent": "quartz_enhanced:root",
   "display": {
     "icon": {
       "item": "quartz_enhanced:nature_quartz_ingot"

@@ -67,6 +67,8 @@
   "advancements.quartz_enhanced.wear_quartz_armor.description": "Collect a full set of reinforced quartz armor",
   "advancements.quartz_enhanced.nature_quartz.title": "Power of Nature",
   "advancements.quartz_enhanced.nature_quartz.description": "Obtain a Nature Quartz Ingot",
+  "advancements.quartz_enhanced.nature_armor.title": "Come to Life",
+  "advancements.quartz_enhanced.nature_armor.description": "The life force of nature not only infuses the ingot but also forms a solid barrier to protect you.",
 
 
   "jei.quartz_enhanced.quartz_powder.info": "Right-click Obsidian with Quartz to start grinding. Quartz Powder is obtained after 2 seconds.\nMovement speed is greatly reduced during grinding. Switching items or moving away will cancel.",
