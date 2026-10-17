@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "nature_quartz_armor",
+  "pattern": [
+    "XXX",
+    "X X",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "quartz_enhanced:nature_quartz_ingot"
+    }
+  },
+  "result": {
+    "item": "quartz_enhanced:nature_quartz_leggings",
+    "count": 1
+  }
+}
