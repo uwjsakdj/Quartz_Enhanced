@@ -27,6 +27,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> RESONANCE_WORKBENCH =
             registerBlock("resonance_workbench",
                     () -> new ResonanceWorkbenchBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public  static final RegistryObject<Block> NATURE_QUARTZ_BLOCK =
+            registerBlock("nature_quartz_block",
+                    () -> new Block(BlockBehaviour.Properties.of().strength(5.0F,6.0F).requiresCorrectToolForDrops()));
 
 
 

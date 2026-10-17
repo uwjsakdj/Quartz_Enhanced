@@ -46,6 +46,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.RESONANCE_WORKBENCH.get());
                         pOutput.accept(ModItems.RESONANCE_STONE.get());
                         pOutput.accept(ModItems.NATURE_RESONANCE_STONE.get());
+                        pOutput.accept(ModBlocks.NATURE_QUARTZ_BLOCK.get());
                         pOutput.accept(ModItems.NATURE_QUARTZ_INGOT.get());
                         pOutput.accept(ModItems.NATURE_QUARTZ_NUGGET.get());
                         pOutput.accept(ModItems.NATURE_QUARTZ_SWORD.get());
