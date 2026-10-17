@@ -1,0 +1,13 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "quartz_enhanced:reinforced_quartz_block"
+    }
+  ],
+  "result": {
+    "item": "quartz_enhanced:reinforced_quartz_ingot",
+    "count": 9
+  }
+}
