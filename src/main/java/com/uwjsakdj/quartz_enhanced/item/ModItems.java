@@ -85,6 +85,8 @@ public class ModItems {
             ITEMS.register("nature_quartz_shovel", NatureQuartzShovel::new);
     public static final RegistryObject<Item> NATURE_QUARTZ_HOE =
             ITEMS.register("nature_quartz_hoe", NatureQuartzHoe::new);
+    public static final RegistryObject<Item> NATURE_QUARTZ_KNIFE =
+            ITEMS.register("nature_quartz_knife", NatureQuartzKnife::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
