@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "quartz_enhanced:reinforced_quartz_hoe"
+    "quartz_enhanced:reinforced_quartz_hoe",
+    "quartz_enhanced:nature_quartz_hoe"
   ]
 }
