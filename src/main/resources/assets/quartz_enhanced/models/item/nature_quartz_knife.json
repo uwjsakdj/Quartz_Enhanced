@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "quartz_enhanced:item/nature_quartz_knife"
+  }
+}
