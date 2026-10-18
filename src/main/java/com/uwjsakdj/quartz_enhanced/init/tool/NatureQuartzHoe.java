@@ -17,6 +17,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.jetbrains.annotations.NotNull;
 import net.minecraft.world.level.block.state.properties.Property;
 import java.util.Collection;
@@ -61,21 +62,32 @@ public class NatureQuartzHoe extends HoeItem {
     public @NotNull InteractionResult useOn(@NotNull UseOnContext context) {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
-        BlockState before = level.getBlockState(pos);
-        boolean isTillable = HoeItem.TILLABLES.containsKey(before.getBlock());
+
+        // 1. 先让原版锄地逻辑执行，看它到底能把方块变成什么
         InteractionResult result = super.useOn(context);
 
-        if (isTillable && !level.isClientSide) {
-            BlockState after = level.getBlockState(pos);
+        // 2. 在服务端，并且锄地动作成功了，才进行处理
+        if (result.consumesAction() && !level.isClientSide) {
+            BlockState afterState = level.getBlockState(pos);
 
-            // 遍历所有属性，查找名字包含 "moisture" 且类型为整数的属性
-            for (Property<?> property : after.getProperties()) {
-                if (property.getName().toLowerCase().contains("moisture")
-                        && property.getValueClass() == Integer.class) {
-                    // 找到后，尝试设置为最大值
-                    int max = Collections.max((Collection<Integer>) property.getPossibleValues());
-                    level.setBlock(pos, after.setValue((Property<Integer>) property, max), 3);
-                    break;
+            // 3. 事后检测：只要新方块有 MOISTURE 属性，就把它拉满
+            //    这比用 TILLABLES 判断更可靠，能兼容更多模组
+            if (afterState.hasProperty(BlockStateProperties.MOISTURE)) {
+                int maxMoisture = Collections.max(
+                        (Collection<Integer>) BlockStateProperties.MOISTURE.getPossibleValues()
+                );
+                level.setBlock(pos, afterState.setValue(BlockStateProperties.MOISTURE, maxMoisture), 3);
+            }
+            // 4. 对于天境这种可能没有使用标准 MOISTURE 属性的情况，
+            //    可以保留你原来的反射遍历逻辑作为后备
+            else {
+                for (Property<?> property : afterState.getProperties()) {
+                    if (property.getName().toLowerCase().contains("moisture")
+                            && property.getValueClass() == Integer.class) {
+                        int max = Collections.max((Collection<Integer>) property.getPossibleValues());
+                        level.setBlock(pos, afterState.setValue((Property<Integer>) property, max), 3);
+                        break;
+                    }
                 }
             }
         }
