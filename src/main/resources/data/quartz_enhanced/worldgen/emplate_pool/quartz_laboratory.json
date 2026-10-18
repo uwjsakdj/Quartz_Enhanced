@@ -1,0 +1,15 @@
+{
+  "name": "quartz_enhanced:quartz_laboratory",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "quartz_enhanced:quartz_laboratory",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#quartz_enhanced:has_structure/quartz_laboratory",
+  "step": "underground_structures",
+  "terrain_adaptation": "beard_thin",
+  "spawn_overrides": {},
+  "start_pool": "quartz_enhanced:quartz_laboratory",
+  "size": 1
+}

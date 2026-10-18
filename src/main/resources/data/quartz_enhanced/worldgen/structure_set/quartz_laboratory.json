@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "quartz_enhanced:quartz_laboratory",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 350,
+    "separation": 100,
+    "salt": 123456789
+  }
+}
