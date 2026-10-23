@@ -72,5 +72,6 @@
   "advancements.quartz_enhanced.nature_armor.description": "自然的生命力不仅赋予了锭，也化作了守护你的坚实壁垒。",
 
   "jei.quartz_enhanced.quartz_powder.info": "手持石英右键黑曜石，2秒后自动研磨获得石英粉。\n研磨期间移速大幅降低，切换物品或远离黑曜石会中断研磨。",
-  "jei.quartz_enhanced.resonance": "共鸣"
+  "jei.quartz_enhanced.resonance": "共鸣",
+  "jei.quartz_enhanced.safety": "安全性: %s%%"
 }
