@@ -1,0 +1,26 @@
+{
+  "type": "quartz_enhanced:resonance",
+  "resonance": {
+    "item": "minecraft:nether_star"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:quartz"
+    },
+    {
+      "item": "minecraft:quartz"
+    },
+    {
+      "item": "minecraft:quartz"
+    },
+    {
+      "item": "minecraft:quartz"
+    }
+  ],
+  "output": {
+    "item": "quartz_enhanced:quartz_jade",
+    "count": 1
+  },
+  "time": 300,
+  "safety": 850
+}
