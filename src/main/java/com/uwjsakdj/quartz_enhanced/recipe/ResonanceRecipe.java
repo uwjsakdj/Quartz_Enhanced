@@ -11,7 +11,6 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import com.uwjsakdj.quartz_enhanced.block.entity.ResonanceWorkbenchBlockEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,17 +19,19 @@ public class ResonanceRecipe implements Recipe<Container> {
 
     private final ResourceLocation id;
     private final Ingredient resonance;
-    private final NonNullList<Ingredient> ingredients; // 4 个待共鸣格
+    private final NonNullList<Ingredient> ingredients;
     private final ItemStack output;
     private final int time;
+    private final int safety; // 新增：安全值 0-1000
 
     public ResonanceRecipe(ResourceLocation id, Ingredient resonance,
-                           NonNullList<Ingredient> ingredients, ItemStack output, int time) {
+                           NonNullList<Ingredient> ingredients, ItemStack output, int time, int safety) {
         this.id = id;
         this.resonance = resonance;
         this.ingredients = ingredients;
         this.output = output;
         this.time = time;
+        this.safety = safety;
     }
 
     public Ingredient getResonance() {
@@ -45,18 +46,16 @@ public class ResonanceRecipe implements Recipe<Container> {
         return time;
     }
 
-    /**
-     * 检查工作台的 5 个输入槽是否匹配本配方。
-     * 索引 0~3 是待共鸣格，索引 4 是共鸣格。
-     */
+    public int getSafety() {
+        return safety;
+    }
+
     @Override
     public boolean matches(Container container, Level level) {
-        // 检查中心共鸣格
         if (!resonance.test(container.getItem(ResonanceWorkbenchBlockEntity.RESONANCE_SLOT))) {
             return false;
         }
 
-        // 检查四个待共鸣格（无序匹配）
         List<Ingredient> remaining = new ArrayList<>(ingredients);
         for (int slot : ResonanceWorkbenchBlockEntity.WAITING_SLOTS) {
             ItemStack stack = container.getItem(slot);
@@ -110,6 +109,6 @@ public class ResonanceRecipe implements Recipe<Container> {
 
     @Override
     public boolean isSpecial() {
-        return true; // 不在配方书里显示
+        return true;
     }
 }
