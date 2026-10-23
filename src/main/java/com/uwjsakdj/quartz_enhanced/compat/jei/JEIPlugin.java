@@ -20,20 +20,18 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-
 import java.util.List;
 
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
 
-    private static final ResourceLocation UID = new ResourceLocation(Quartz_Enhanced.MOD_ID, "jei_plugin");
+    // 修复：使用新的 ResourceLocation 构造方式
+    private static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(Quartz_Enhanced.MOD_ID, "jei_plugin");
 
     @Override
     public @NotNull ResourceLocation getPluginUid() {
         return UID;
     }
-
-    // ========== 配方类别 ==========
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
@@ -42,26 +40,20 @@ public class JEIPlugin implements IModPlugin {
         );
     }
 
-    // ========== 配方本体 + 信息页 ==========
-
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        // 信息页面：左键石英粉时显示
         registration.addIngredientInfo(
                 new ItemStack(ModItems.QUARTZ_POWDER.get()),
                 VanillaTypes.ITEM_STACK,
                 Component.translatable("jei.quartz_enhanced.quartz_powder.info")
         );
 
-        // 共鸣配方：从客户端配方管理器拉取
         if (Minecraft.getInstance().level != null) {
             List<ResonanceRecipe> recipes = Minecraft.getInstance().level.getRecipeManager()
                     .getAllRecipesFor(ModRecipes.RESONANCE_TYPE.get());
             registration.addRecipes(ResonanceRecipeCategory.RECIPE_TYPE, recipes);
         }
     }
-
-    // ========== 催化剂：把工作台和配方类别绑定 ==========
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
@@ -71,13 +63,11 @@ public class JEIPlugin implements IModPlugin {
         );
     }
 
-    // ========== 转移处理器：JEI 的 "+" 按钮 ==========
-
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
         registration.addRecipeTransferHandler(
                 ResonanceWorkbenchMenu.class,
-                ModMenuTypes.RESONANCE_WORKBENCH.get(),   // 添加 MenuType 参数
+                ModMenuTypes.RESONANCE_WORKBENCH.get(),
                 ResonanceRecipeCategory.RECIPE_TYPE,
                 0, 5,       // 工作台输入槽：菜单索引 0~4
                 5, 36       // 玩家背包槽：菜单索引 5~40

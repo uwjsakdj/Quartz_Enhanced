@@ -59,22 +59,36 @@ public class ResonanceRecipeCategory implements IRecipeCategory<ResonanceRecipe>
     }
 
     @Override
-    public void setRecipe(@NotNull IRecipeLayoutBuilder builder, ResonanceRecipe recipe, @NotNull IFocusGroup focuses) {
-        int[][] waitingPositions = {{12, 12}, {50, 12}, {12, 50}, {50, 50}};
-        for (int i = 0; i < recipe.getIngredients().size() && i < waitingPositions.length; i++) {
-            builder.addSlot(RecipeIngredientRole.INPUT,
-                            waitingPositions[i][0], waitingPositions[i][1])
-                    .addIngredients(recipe.getIngredients().get(i));
-        }
+    public void setRecipe(IRecipeLayoutBuilder builder, ResonanceRecipe recipe, @NotNull IFocusGroup focuses) {
+        // 【修复重点】
+        // 必须严格按照 Menu 里的索引顺序添加：0(左上), 1(右上), 2(中心), 3(左下), 4(右下)
+        // 这样 JEI 转移时，物品才能一一对应进入正确的槽位。
 
+        // 槽 0：左上
+        builder.addSlot(RecipeIngredientRole.INPUT, 12, 12)
+                .addIngredients(recipe.getIngredients().get(0));
+
+        // 槽 1：右上
+        builder.addSlot(RecipeIngredientRole.INPUT, 50, 12)
+                .addIngredients(recipe.getIngredients().get(1));
+
+        // 槽 2：中心（共鸣格）
         builder.addSlot(RecipeIngredientRole.INPUT, 31, 31)
                 .addIngredients(recipe.getResonance());
 
+        // 槽 3：左下
+        builder.addSlot(RecipeIngredientRole.INPUT, 12, 50)
+                .addIngredients(recipe.getIngredients().get(2));
+
+        // 槽 4：右下
+        builder.addSlot(RecipeIngredientRole.INPUT, 50, 50)
+                .addIngredients(recipe.getIngredients().get(3));
+
+        // 槽 5：输出槽
         builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 30)
                 .addItemStack(recipe.getResultItem(null));
     }
 
-    // ========== 修正后的 draw 方法，补全了 IRecipeSlotsView 参数 ==========
     @Override
     public void draw(ResonanceRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, @NotNull GuiGraphics guiGraphics, double mouseX, double mouseY) {
         int safety = recipe.getSafety();
@@ -84,13 +98,13 @@ public class ResonanceRecipeCategory implements IRecipeCategory<ResonanceRecipe>
 
         int color;
         if (safety >= 1000) {
-            color = 0x00AA00; // 绿色
+            color = 0x00AA00;
         } else if (safety >= 800) {
-            color = 0xAAAA00; // 黄色
+            color = 0xAAAA00;
         } else if (safety >= 500) {
-            color = 0xFF8800; // 橙色
+            color = 0xFF8800;
         } else {
-            color = 0xFF0000; // 红色
+            color = 0xFF0000;
         }
 
         int x = 140 - Minecraft.getInstance().font.width(text) - 2;
