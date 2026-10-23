@@ -8,5 +8,6 @@
     { "item": "minecraft:pitcher_pod" }
   ],
   "output": { "item": "quartz_enhanced:nature_resonance_stone", "count": 1 },
-  "time": 200
+  "time": 200,
+  "safety":1000
 }

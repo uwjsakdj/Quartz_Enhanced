@@ -8,5 +8,6 @@
     { "item": "quartz_enhanced:reinforced_quartz_ingot" }
   ],
   "output": { "item": "quartz_enhanced:nature_quartz_ingot", "count": 4 },
-  "time": 150
+  "time": 150,
+  "safety":1000
 }

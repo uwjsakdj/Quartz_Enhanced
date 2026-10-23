@@ -8,5 +8,6 @@
     { "item": "minecraft:amethyst_shard" }
   ],
   "output": { "item": "quartz_enhanced:resonance_stone", "count": 1 },
-  "time": 200
+  "time": 200,
+  "safety":1000
 }
