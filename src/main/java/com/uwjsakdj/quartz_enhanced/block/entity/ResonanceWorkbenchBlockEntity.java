@@ -30,6 +30,10 @@ public class ResonanceWorkbenchBlockEntity extends BlockEntity implements Worldl
     private int maxProgress = 0;
     private ResonanceRecipe currentRecipe = null;
 
+    // 爆炸判定相关状态
+    private boolean explosionChecked = false;
+    private boolean willExplode = false;
+
     private final ContainerData data = new ContainerData() {
         @Override
         public int get(int index) {
@@ -70,25 +74,60 @@ public class ResonanceWorkbenchBlockEntity extends BlockEntity implements Worldl
         boolean changed = false;
 
         if (currentRecipe != null && currentRecipe.matches(this, level) && canOutput(currentRecipe)) {
+
+            // 1. 合成开始时，掷骰子判定是否爆炸（只判定一次）
+            if (progress == 0 && !explosionChecked) {
+                float safetyChance = currentRecipe.getSafety() / 1000.0F;
+                // 生成 0.0 到 1.0 的随机数，如果大于安全概率，则必定爆炸
+                this.willExplode = level.random.nextFloat() >= safetyChance;
+                this.explosionChecked = true;
+                changed = true;
+            }
+
             progress++;
             changed = true;
+
+            // 2. 如果判定会爆炸，且进度达到 50%
+            if (willExplode && progress >= maxProgress / 2) {
+                // 引发爆炸（威力 4.0F 类似 TNT，破坏方块）
+                level.explode(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 4.0F, Level.ExplosionInteraction.BLOCK);
+
+                // 清空状态
+                progress = 0;
+                maxProgress = 0;
+                currentRecipe = null;
+                explosionChecked = false;
+                willExplode = false;
+                setChanged();
+                return; // 结束 tick
+            }
+
+            // 3. 正常完成合成
             if (progress >= maxProgress) {
                 craftItem(currentRecipe);
                 progress = 0;
                 maxProgress = 0;
                 currentRecipe = null;
+                explosionChecked = false;
+                willExplode = false;
             }
         } else {
+            // 尝试匹配新配方或中断合成
             ResonanceRecipe recipe = findMatchingRecipe(level);
             if (recipe != null && canOutput(recipe)) {
                 currentRecipe = recipe;
                 maxProgress = recipe.getTime();
                 progress = 0;
+                explosionChecked = false; // 重置判定
+                willExplode = false;
                 changed = true;
             } else if (progress != 0 || maxProgress != 0 || currentRecipe != null) {
+                // 中断合成
                 progress = 0;
                 maxProgress = 0;
                 currentRecipe = null;
+                explosionChecked = false;
+                willExplode = false;
                 changed = true;
             }
         }
@@ -139,6 +178,9 @@ public class ResonanceWorkbenchBlockEntity extends BlockEntity implements Worldl
         ContainerHelper.loadAllItems(tag, items);
         progress = tag.getInt("Progress");
         maxProgress = tag.getInt("MaxProgress");
+        // 读取爆炸判定状态
+        explosionChecked = tag.getBoolean("ExplosionChecked");
+        willExplode = tag.getBoolean("WillExplode");
     }
 
     @Override
@@ -147,6 +189,9 @@ public class ResonanceWorkbenchBlockEntity extends BlockEntity implements Worldl
         ContainerHelper.saveAllItems(tag, items);
         tag.putInt("Progress", progress);
         tag.putInt("MaxProgress", maxProgress);
+        // 保存爆炸判定状态
+        tag.putBoolean("ExplosionChecked", explosionChecked);
+        tag.putBoolean("WillExplode", willExplode);
     }
 
     // ===================== Container =====================
