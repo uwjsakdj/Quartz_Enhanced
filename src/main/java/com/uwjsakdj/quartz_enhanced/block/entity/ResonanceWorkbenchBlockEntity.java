@@ -89,17 +89,24 @@ public class ResonanceWorkbenchBlockEntity extends BlockEntity implements Worldl
 
             // 2. 如果判定会爆炸，且进度达到 50%
             if (willExplode && progress >= maxProgress / 2) {
-                // 引发爆炸（威力 4.0F 类似 TNT，破坏方块）
+
+                // 1. 清空内部的所有物品（防止物品被炸出来）
+                this.clearContent();
+
+                // 2. 将方块直接替换为空气（防止工作台本身掉落成物品）
+                level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
+
+                // 3. 引发爆炸（威力 4.0F，只会破坏周围的其他方块了）
                 level.explode(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 4.0F, Level.ExplosionInteraction.BLOCK);
 
-                // 清空状态
+                // 清空状态并重置
                 progress = 0;
                 maxProgress = 0;
                 currentRecipe = null;
                 explosionChecked = false;
                 willExplode = false;
                 setChanged();
-                return; // 结束 tick
+                return; // 结束 tick，因为此时方块已经没了
             }
 
             // 3. 正常完成合成
