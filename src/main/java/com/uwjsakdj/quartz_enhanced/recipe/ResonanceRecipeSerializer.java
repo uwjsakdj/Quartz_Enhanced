@@ -26,8 +26,10 @@ public class ResonanceRecipeSerializer implements RecipeSerializer<ResonanceReci
 
         ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
         int time = GsonHelper.getAsInt(json, "time", 200);
+        // 默认安全值设为 1000，防止旧配方爆炸
+        int safety = GsonHelper.getAsInt(json, "safety", 1000);
 
-        return new ResonanceRecipe(id, resonance, ingredients, output, time);
+        return new ResonanceRecipe(id, resonance, ingredients, output, time, safety);
     }
 
     @Nullable
@@ -43,8 +45,9 @@ public class ResonanceRecipeSerializer implements RecipeSerializer<ResonanceReci
 
         ItemStack output = buf.readItem();
         int time = buf.readVarInt();
+        int safety = buf.readVarInt();
 
-        return new ResonanceRecipe(id, resonance, ingredients, output, time);
+        return new ResonanceRecipe(id, resonance, ingredients, output, time, safety);
     }
 
     @Override
@@ -58,5 +61,6 @@ public class ResonanceRecipeSerializer implements RecipeSerializer<ResonanceReci
 
         buf.writeItem(recipe.getResultItem(null));
         buf.writeVarInt(recipe.getTime());
+        buf.writeVarInt(recipe.getSafety());
     }
 }
