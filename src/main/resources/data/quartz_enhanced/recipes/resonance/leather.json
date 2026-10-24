@@ -1,0 +1,18 @@
+{
+  "type": "quartz_enhanced:resonance",
+  "resonance": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "ingredients": [
+    { "item": "minecraft:sand" },
+    { "item": "minecraft:sand" },
+    { "item": "minecraft:gravel" },
+    { "item": "minecraft:gravel" }
+  ],
+  "output": {
+    "item": "minecraft:leather",
+    "count": 1
+  },
+  "time": 100,
+  "safety": 1000
+}

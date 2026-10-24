@@ -1,0 +1,18 @@
+{
+  "type": "quartz_enhanced:resonance",
+  "resonance": {
+    "item": "minecraft:amethyst_block"
+  },
+  "ingredients": [
+    { "item": "minecraft:amethyst_shard" },
+    { "item": "minecraft:amethyst_shard" },
+    { "item": "minecraft:amethyst_shard" },
+    { "item": "minecraft:amethyst_shard" }
+  ],
+  "output": {
+    "item": "minecraft:budding_amethyst",
+    "count": 1
+  },
+  "time": 800,
+  "safety": 880
+}

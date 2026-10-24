@@ -1,0 +1,18 @@
+{
+  "type": "quartz_enhanced:resonance",
+  "resonance": {
+    "item": "minecraft:blaze_rod"
+  },
+  "ingredients": [
+    { "item": "minecraft:ender_pearl" },
+    { "item": "minecraft:ender_pearl" },
+    { "item": "minecraft:ender_pearl" },
+    { "item": "minecraft:ender_pearl" }
+  ],
+  "output": {
+    "item": "minecraft:ender_eye",
+    "count": 4
+  },
+  "time": 100,
+  "safety": 1000
+}

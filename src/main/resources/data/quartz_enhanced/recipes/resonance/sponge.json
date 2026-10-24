@@ -1,0 +1,18 @@
+{
+  "type": "quartz_enhanced:resonance",
+  "resonance": {
+    "item": "minecraft:dried_kelp_block"
+  },
+  "ingredients": [
+    { "item": "minecraft:yellow_wool" },
+    { "item": "minecraft:yellow_wool" },
+    { "item": "minecraft:yellow_wool" },
+    { "item": "minecraft:yellow_wool" }
+  ],
+  "output": {
+    "item": "minecraft:sponge",
+    "count": 1
+  },
+  "time": 200,
+  "safety": 1000
+}
