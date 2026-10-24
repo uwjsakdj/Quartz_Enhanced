@@ -51,7 +51,7 @@ Quartz Enhanced expands the role of quartz in Minecraft by adding new materials,
 
 ## 🐛 Bug Reports & Suggestions
 
-Please report bugs or suggest features via [GitHub Issues](https://github.com/YOUR_USERNAME/Quartz_Enhanced/issues). When reporting a bug, please include:
+Please report bugs or suggest features via [GitHub Issues](https://github.com/uwjsakdj/Quartz_Enhanced/issues). When reporting a bug, please include:
 
 - Minecraft version
 - Forge version
@@ -62,6 +62,6 @@ Please report bugs or suggest features via [GitHub Issues](https://github.com/YO
 ## 🛠️ Building from Source
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Quartz_Enhanced.git
+git clone https://github.com/uwjsakdj/Quartz_Enhanced.git
 cd Quartz_Enhanced
 ./gradlew build
