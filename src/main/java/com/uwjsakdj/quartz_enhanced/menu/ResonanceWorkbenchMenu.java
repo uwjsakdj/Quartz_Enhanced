@@ -4,15 +4,19 @@ import com.uwjsakdj.quartz_enhanced.block.entity.ResonanceWorkbenchBlockEntity;
 import com.uwjsakdj.quartz_enhanced.registry.ModMenuTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
 public class ResonanceWorkbenchMenu extends AbstractContainerMenu {
 
+    private final Container container;
     private final ResonanceWorkbenchBlockEntity blockEntity;
     private final ContainerData data;
 
@@ -29,28 +33,33 @@ public class ResonanceWorkbenchMenu extends AbstractContainerMenu {
     private ResonanceWorkbenchMenu(int containerId, Inventory playerInventory, ResonanceWorkbenchBlockEntity blockEntity) {
         super(ModMenuTypes.RESONANCE_WORKBENCH.get(), containerId);
         this.blockEntity = blockEntity;
-        this.data = blockEntity.getContainerData();
+
+        // 如果客户端没同步到 BlockEntity，使用临时的空容器和空数据，防止崩溃
+        this.container = blockEntity != null ? blockEntity : new SimpleContainer(ResonanceWorkbenchBlockEntity.SLOT_COUNT);
+        this.data = blockEntity != null ? blockEntity.getContainerData() : new SimpleContainerData(2);
+
         this.addSlots(playerInventory);
         this.addDataSlots(data);
     }
 
     private static ResonanceWorkbenchBlockEntity resolveBlockEntity(Inventory playerInventory, BlockPos pos) {
+        // 如果获取不到，返回 null，绝不抛异常
         if (playerInventory.player.level().getBlockEntity(pos) instanceof ResonanceWorkbenchBlockEntity be) {
             return be;
         }
-        throw new IllegalStateException("No ResonanceWorkbenchBlockEntity at " + pos);
+        return null;
     }
 
     private void addSlots(Inventory playerInventory) {
         // 输入槽 0~4
-        this.addSlot(new Slot(blockEntity, 0, 16, 16)); // 左上
-        this.addSlot(new Slot(blockEntity, 1, 54, 16)); // 右上
-        this.addSlot(new Slot(blockEntity, 2, 35, 35)); // 中心
-        this.addSlot(new Slot(blockEntity, 3, 16, 54)); // 左下
-        this.addSlot(new Slot(blockEntity, 4, 54, 54)); // 右下
+        this.addSlot(new Slot(container, 0, 16, 16)); // 左上
+        this.addSlot(new Slot(container, 1, 54, 16)); // 右上
+        this.addSlot(new Slot(container, 2, 35, 35)); // 中心
+        this.addSlot(new Slot(container, 3, 16, 54)); // 左下
+        this.addSlot(new Slot(container, 4, 54, 54)); // 右下
 
         // 输出槽 5：不允许放入
-        this.addSlot(new Slot(blockEntity, 5, 112, 33) {
+        this.addSlot(new Slot(container, 5, 112, 33) {
             @Override
             public boolean mayPlace(ItemStack stack) {
                 return false;
@@ -71,7 +80,7 @@ public class ResonanceWorkbenchMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        return blockEntity.stillValid(player);
+        return blockEntity != null && blockEntity.stillValid(player);
     }
 
     @Override

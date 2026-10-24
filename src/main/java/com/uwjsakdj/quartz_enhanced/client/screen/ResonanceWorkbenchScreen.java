@@ -7,36 +7,39 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.ItemStack;
 
 public class ResonanceWorkbenchScreen extends AbstractContainerScreen<ResonanceWorkbenchMenu> {
 
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Quartz_Enhanced.MOD_ID, "textures/gui/container/resonance_workbench.png");
+            ResourceLocation.fromNamespaceAndPath(Quartz_Enhanced.MOD_ID, "textures/gui/container/resonance_workbench.png");
 
     public ResonanceWorkbenchScreen(ResonanceWorkbenchMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
         this.imageWidth = 176;
         this.imageHeight = 166;
     }
-    // 这个方法可以删掉，或者只保留 super 调用
-    @Override
-    public void renderBackground(GuiGraphics guiGraphics) {
-        super.renderBackground(guiGraphics);
-    }
 
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-        // 先画变暗遮罩
+        // 1. 强制画全屏半透明黑色遮罩
         guiGraphics.fillGradient(0, 0, this.width, this.height, -1072689136, -804253680);
-        // 再调用 super.render 来画你的 GUI 界面
+
+        // 2. 渲染原版 GUI（画背景图、物品图标等）
         super.render(guiGraphics, mouseX, mouseY, partialTick);
+
+        // 3. 强制手动渲染 Tooltip
+        if (this.hoveredSlot != null && this.hoveredSlot.hasItem()) {
+            ItemStack stack = this.hoveredSlot.getItem();
+            guiGraphics.renderTooltip(this.font, stack, mouseX, mouseY);
+        }
     }
 
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
-        int x = (width - imageWidth) / 2;
-        int y = (height - imageHeight) / 2;
-        guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
+        int x = (this.width - this.imageWidth) / 2;
+        int y = (this.height - this.imageHeight) / 2;
+        guiGraphics.blit(TEXTURE, x, y, 0, 0, this.imageWidth, this.imageHeight);
 
         int progress = menu.getProgress();
         int maxProgress = menu.getMaxProgress();
@@ -44,5 +47,10 @@ public class ResonanceWorkbenchScreen extends AbstractContainerScreen<ResonanceW
             int progressWidth = (int) ((float) progress / maxProgress * 21);
             guiGraphics.blit(TEXTURE, x + 83, y + 35, 176, 0, progressWidth, 14);
         }
+    }
+
+    @Override
+    protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+        guiGraphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, 4210752, false);
     }
 }
