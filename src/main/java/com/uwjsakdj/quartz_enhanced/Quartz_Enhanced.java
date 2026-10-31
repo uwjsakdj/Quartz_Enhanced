@@ -2,6 +2,8 @@ package com.uwjsakdj.quartz_enhanced;
 
 import com.mojang.logging.LogUtils;
 import com.uwjsakdj.quartz_enhanced.block.ModBlocks;
+import com.uwjsakdj.quartz_enhanced.effect.ModEffects;
+import com.uwjsakdj.quartz_enhanced.init.tool.NatureQuartzAxe;
 import com.uwjsakdj.quartz_enhanced.init.tool.NatureQuartzPickaxe;
 import com.uwjsakdj.quartz_enhanced.item.ModCreativeModeTabs;
 import com.uwjsakdj.quartz_enhanced.item.ModItems;
@@ -57,10 +59,11 @@ public class Quartz_Enhanced {
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModEffects.register(modEventBus);
         SOUNDS.register(modEventBus);   // ❸ 把声音注册表也挂上总线
 
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.register(NatureQuartzPickaxe.Events.class);
+
         modEventBus.addListener(this::addCreative);
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
