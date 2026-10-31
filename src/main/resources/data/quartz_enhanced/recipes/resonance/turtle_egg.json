@@ -1,0 +1,18 @@
+{
+  "type": "quartz_enhanced:resonance",
+  "resonance": {
+    "item": "minecraft:egg"
+  },
+  "ingredients": [
+    { "item": "minecraft:seagrass" },
+    { "item": "minecraft:seagrass" },
+    { "item": "minecraft:scute" },
+    { "item": "minecraft:scute" }
+  ],
+  "output": {
+    "item": "minecraft:turtle_egg",
+    "count": 1
+  },
+  "time": 400,
+  "safety": 1000
+}

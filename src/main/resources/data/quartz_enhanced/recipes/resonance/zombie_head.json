@@ -1,0 +1,18 @@
+{
+  "type": "quartz_enhanced:resonance",
+  "resonance": {
+    "item": "minecraft:skeleton_skull"
+  },
+  "ingredients": [
+    { "item": "minecraft:rotten_flesh" },
+    { "item": "minecraft:rotten_flesh" },
+    { "item": "minecraft:rotten_flesh" },
+    { "item": "minecraft:rotten_flesh" }
+  ],
+  "output": {
+    "item": "minecraft:zombie_head",
+    "count": 1
+  },
+  "time": 300,
+  "safety": 999
+}
