@@ -2,13 +2,13 @@ package com.uwjsakdj.quartz_enhanced.init.tool;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.uwjsakdj.quartz_enhanced.Quartz_Enhanced;
 import com.uwjsakdj.quartz_enhanced.item.ModItems;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -23,14 +23,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
 
 public class NatureQuartzAxe extends AxeItem {
 
@@ -66,14 +61,38 @@ public class NatureQuartzAxe extends AxeItem {
         return modifiers;
     }
 
-    // ========== 事件处理 ==========
-    @Mod.EventBusSubscriber(modid = Quartz_Enhanced.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+    // ========== 挖掘方块：额外掉落 + 急迫（不依赖 Forge 事件） ==========
+    @Override
+    public boolean mineBlock(@NotNull ItemStack stack, @NotNull Level level,
+                             @NotNull BlockState state, @NotNull BlockPos pos,
+                             @NotNull LivingEntity entity) {
+        boolean result = super.mineBlock(stack, level, state, pos, entity);
+
+        // 仅在服务端处理，避免客户端重复掉落
+        if (level.isClientSide) return result;
+        if (!(entity instanceof Player player)) return result;
+        if (!state.is(BlockTags.LOGS)) return result;
+
+        // 15% 额外掉落一份原木（原版掉落已由 playerDestroy 处理，这里是“额外”部分）
+        if (level.random.nextFloat() < 0.15F) {
+            Block.dropResources(state, level, pos, null, player, stack);
+        }
+
+        // 每次挖掘 1% 概率获得 15 秒急迫 II
+        if (player.getRandom().nextFloat() < 0.01F) {
+            player.addEffect(new MobEffectInstance(
+                    MobEffects.DIG_SPEED, 15 * 20, 1, false, true
+            ));
+        }
+
+        return result;
+    }
+
+    // ========== 事件处理：仅保留去皮逻辑 ==========
+    @Mod.EventBusSubscriber(modid = "quartz_enhanced", bus = Mod.EventBusSubscriber.Bus.FORGE)
     public static class Events {
 
-        // 每个玩家挖掘原木的计数器
-        private static final Map<UUID, Integer> LOG_COUNTER = new HashMap<>();
-
-        // 1. 去皮不消耗耐久
+        // 去皮不消耗耐久
         @SubscribeEvent
         public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
             Player player = event.getEntity();
@@ -88,40 +107,11 @@ public class NatureQuartzAxe extends AxeItem {
             BlockState stripped = AxeItem.getAxeStrippingState(state);
             if (stripped == null) return;
 
-            // 拦下原版逻辑，自己执行
             event.setCanceled(true);
 
             if (!level.isClientSide) {
                 level.setBlockAndUpdate(pos, stripped);
                 level.levelEvent(null, 2001, pos, Block.getId(state));
-                // 关键：不调用 hurtAndBreak，所以耐久不消耗
-            }
-        }
-
-        // 2. 15% 额外掉落原木 + 每 50 个给急迫 II
-        @SubscribeEvent
-        public static void onBlockBreak(BlockEvent.BreakEvent event) {
-            Player player = event.getPlayer();
-            ItemStack tool = player.getMainHandItem();
-            if (!(tool.getItem() instanceof NatureQuartzAxe)) return;
-
-            BlockState state = event.getState();
-            if (!state.is(net.minecraft.tags.BlockTags.LOGS)) return;
-
-            // 15% 概率额外掉落同种原木
-            if (event.getLevel() instanceof ServerLevel serverLevel) {
-                if (serverLevel.random.nextFloat() < 0.15F) {
-                    Block.dropResources(state, serverLevel, event.getPos(), null, player, tool);
-                }
-            }
-
-            // 计数：每 50 个给 15 秒急迫 II
-            int count = LOG_COUNTER.merge(player.getUUID(), 1, Integer::sum);
-            if (count >= 50) {
-                LOG_COUNTER.put(player.getUUID(), 0);
-                player.addEffect(new MobEffectInstance(
-                        MobEffects.DIG_SPEED, 15 * 20, 1, false, true
-                ));
             }
         }
     }
