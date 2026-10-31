@@ -39,6 +39,8 @@ minecraft {
 
         client {
             property 'forge.enabledGameTestNamespaces', mod_id
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
         }
 
         server {
@@ -78,8 +80,10 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.20.0.106")
     runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.20.0.106")
 
-    compileOnly fg.deobf("curse.maven:jade-324717:5776962") // 11.12.2 的 Curse Maven ID
+    compileOnly fg.deobf("curse.maven:jade-324717:5776962") // Jade
 
+    // 添加 JEED (Just Enough Effect Descriptions) 用于在 JEI 中显示 Buff 描述
+    runtimeOnly fg.deobf("curse.maven:jeed-532286:5186339")
 }
 
 // ========== 资源处理 ==========
