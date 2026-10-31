@@ -3,9 +3,11 @@ package com.uwjsakdj.quartz_enhanced.init.tool;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.uwjsakdj.quartz_enhanced.item.ModItems;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -15,41 +17,20 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.event.level.BlockEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 public class NatureQuartzPickaxe extends PickaxeItem {
 
     // ========== Tier：与增强石英镐完全一致 ==========
     public static final Tier NATURE_QUARTZ_PICKAXE_TIER = new Tier() {
-        @Override
-        public int getUses() {
-            return 1796;
-        }
-
-        @Override
-        public float getSpeed() {
-            return 9.0F;
-        }
-
-        @Override
-        public float getAttackDamageBonus() {
-            return 5.0F;
-        }
-
-        @Override
-        public int getLevel() {
-            return 3;
-        }
-
-        @Override
-        public int getEnchantmentValue() {
-            return 10;
-        }
-
-        @Override
-        public @NotNull Ingredient getRepairIngredient() {
+        @Override public int getUses() { return 1796; }
+        @Override public float getSpeed() { return 9.0F; }
+        @Override public float getAttackDamageBonus() { return 5.0F; }
+        @Override public int getLevel() { return 3; }
+        @Override public int getEnchantmentValue() { return 10; }
+        @Override public @NotNull Ingredient getRepairIngredient() {
             return Ingredient.of(ModItems.NATURE_QUARTZ_INGOT.get());
         }
     };
@@ -74,42 +55,27 @@ public class NatureQuartzPickaxe extends PickaxeItem {
         return modifiers;
     }
 
-    // ========== 事件处理（不再用 @Mod.EventBusSubscriber，改为主类手动注册） ==========
-    // ========== 事件处理（不再用 @Mod.EventBusSubscriber，改为主类手动注册） ==========
-    public static class Events {
+    // ========== 挖掘方块逻辑（无需任何事件注册） ==========
+    @Override
+    public boolean mineBlock(@NotNull ItemStack stack, @NotNull Level level,
+                             @NotNull BlockState state, @NotNull BlockPos pos,
+                             @NotNull LivingEntity entity) {
+        boolean result = super.mineBlock(stack, level, state, pos, entity);
 
-        // 防重：记录最近处理过的方块位置
-        private static final java.util.Set<net.minecraft.core.BlockPos> PROCESSED =
-                java.util.Collections.newSetFromMap(new java.util.concurrent.ConcurrentHashMap<>());
+        // 仅限服务端，且必须是玩家
+        if (level.isClientSide || !(entity instanceof Player player)) return result;
 
-        @SubscribeEvent
-        public static void onBlockBreak(BlockEvent.BreakEvent event) {
-            Player player = event.getPlayer();
-            if (player == null) return;
-            if (player.level().isClientSide) return;
+        // 1. 每次挖掘给 1~9 点经验
+        int xp = 1 + player.getRandom().nextInt(3);
+        player.giveExperiencePoints(xp);
 
-            ItemStack tool = player.getMainHandItem();
-            if (!(tool.getItem() instanceof NatureQuartzPickaxe)) return;
-
-            // 同一个位置只处理一次
-            if (!PROCESSED.add(event.getPos())) {
-                return;
-            }
-
-            // 防止集合无限增长：每次处理完后，延迟清掉这个位置
-            // 用一个简单的办法：集合超过 1000 个元素就清空
-            if (PROCESSED.size() > 1000) {
-                PROCESSED.clear();
-            }
-
-            int xp = 1 + player.getRandom().nextInt(9);
-            player.giveExperiencePoints(xp);
-
-            if (player.getRandom().nextFloat() < 0.01F) {
-                player.addEffect(new MobEffectInstance(
-                        MobEffects.DIG_SPEED, 15 * 20, 1, false, true
-                ));
-            }
+        // 2. 每次挖掘 1% 概率给急迫 II（15秒）
+        if (player.getRandom().nextFloat() < 0.01F) {
+            player.addEffect(new MobEffectInstance(
+                    MobEffects.DIG_SPEED, 15 * 20, 1, false, true
+            ));
         }
+
+        return result;
     }
 }
