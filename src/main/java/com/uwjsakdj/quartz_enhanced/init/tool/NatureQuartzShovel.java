@@ -8,6 +8,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -25,9 +26,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.function.Consumer;
+
 public class NatureQuartzShovel extends ShovelItem {
 
-    // ========== Tier：与增强石英锹完全一致 ==========
     public static final Tier NATURE_QUARTZ_SHOVEL_TIER = new Tier() {
         @Override public int getUses() { return 1796; }
         @Override public float getSpeed() { return 9.0F; }
@@ -43,7 +45,15 @@ public class NatureQuartzShovel extends ShovelItem {
         super(NATURE_QUARTZ_SHOVEL_TIER, 0F, -3.0F, new Item.Properties().durability(1796));
     }
 
-    // ========== 主手 / 副手 持有 +8 最大生命 ==========
+    private static boolean isFlattening = false;
+    public static void setFlattening(boolean flattening) { isFlattening = flattening; }
+
+    @Override
+    public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
+        if (isFlattening) return 0;
+        return super.damageItem(stack, amount, entity, onBroken);
+    }
+
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> modifiers =
@@ -59,7 +69,32 @@ public class NatureQuartzShovel extends ShovelItem {
         return modifiers;
     }
 
-    // ========== 重写 useOn：任意面转化土径，且不消耗耐久 ==========
+    // ========== 特征扫描版：不猜名字，直接找 Map<Block, BlockState> ==========
+    @SuppressWarnings("unchecked")
+    public static BlockState getVanillaFlattenedState(BlockState state) {
+        try {
+            for (java.lang.reflect.Field field : ShovelItem.class.getDeclaredFields()) {
+                if (java.lang.reflect.Modifier.isStatic(field.getModifiers())) {
+                    if (java.util.Map.class.isAssignableFrom(field.getType())) {
+                        field.setAccessible(true);
+                        Object value = field.get(null);
+                        if (value instanceof java.util.Map<?, ?> map) {
+                            for (java.util.Map.Entry<?, ?> entry : map.entrySet()) {
+                                if (entry.getKey() instanceof net.minecraft.world.level.block.Block
+                                        && entry.getValue() instanceof BlockState) {
+                                    return ((java.util.Map<net.minecraft.world.level.block.Block, BlockState>) map)
+                                            .get(state.getBlock());
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (Exception ignored) {
+        }
+        return null;
+    }
+
     @Override
     public @NotNull InteractionResult useOn(@NotNull UseOnContext context) {
         Level level = context.getLevel();
@@ -67,49 +102,40 @@ public class NatureQuartzShovel extends ShovelItem {
         ItemStack stack = context.getItemInHand();
         BlockState state = level.getBlockState(pos);
 
-        // 使用 Forge 的 ToolAction 系统，兼容所有正确注册的模组方块
+        BlockState modifiedState = null;
+
         if (stack.canPerformAction(net.minecraftforge.common.ToolActions.SHOVEL_FLATTEN)) {
-            BlockState modifiedState = state.getToolModifiedState(
-                    context,
-                    net.minecraftforge.common.ToolActions.SHOVEL_FLATTEN,
-                    true
+            modifiedState = state.getToolModifiedState(
+                    context, net.minecraftforge.common.ToolActions.SHOVEL_FLATTEN, true
             );
-            if (modifiedState != null) {
-                if (!level.isClientSide) {
-                    level.setBlockAndUpdate(pos, modifiedState);
-                    level.playSound(
-                            null, pos,
-                            net.minecraft.sounds.SoundEvents.SHOVEL_FLATTEN,
-                            net.minecraft.sounds.SoundSource.BLOCKS,
-                            1.0F, 1.0F
-                    );
-                }
-                return InteractionResult.sidedSuccess(level.isClientSide);
-            }
+        }
+        if (modifiedState == null) {
+            modifiedState = getVanillaFlattenedState(state);
         }
 
-        // 其他情况走原版逻辑
+        if (modifiedState != null) {
+            if (!level.isClientSide) {
+                level.setBlockAndUpdate(pos, modifiedState);
+                level.playSound(null, pos,
+                        net.minecraft.sounds.SoundEvents.SHOVEL_FLATTEN,
+                        net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, 1.0F);
+            }
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
+
         return super.useOn(context);
     }
 
-    // ========== 事件处理 ==========
     @Mod.EventBusSubscriber(modid = "quartz_enhanced", bus = Mod.EventBusSubscriber.Bus.FORGE)
     public static class Events {
-
-        // 每次挖掘方块有 1% 概率获得 15 秒急迫 II
         @SubscribeEvent
         public static void onBlockBreak(BlockEvent.BreakEvent event) {
             Player player = event.getPlayer();
-            if (player == null) return;
-            if (player.level().isClientSide) return;
-
+            if (player == null || player.level().isClientSide) return;
             ItemStack tool = player.getMainHandItem();
             if (!(tool.getItem() instanceof NatureQuartzShovel)) return;
-
             if (player.getRandom().nextFloat() < 0.01F) {
-                player.addEffect(new MobEffectInstance(
-                        MobEffects.DIG_SPEED, 15 * 20, 1, false, true
-                ));
+                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 15 * 20, 1, false, true));
             }
         }
     }
