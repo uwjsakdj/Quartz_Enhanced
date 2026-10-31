@@ -49,6 +49,10 @@
 
   "itemGroup.quartz_enhanced_tab": "Quartz enhanced Tab",
 
+  "effect.quartz_enhanced.prickly": "Prickly",
+
+  "effect.quartz_enhanced.prickly.description": "When hit by a melee attack, reflects thorns damage back to the attacker. Higher levels increase the reflection multiplier.",
+
   "sound.quartz_enhanced.quartz_crush": "Quartz crushed",
 
   "message.quartz_enhanced.insufficient_experience": "Insufficient experience! You need at least level 45 to cast this spell.",

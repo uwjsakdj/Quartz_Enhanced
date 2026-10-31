@@ -52,6 +52,10 @@
 
   "itemGroup.quartz_enhanced_tab": "增强·石英",
 
+  "effect.quartz_enhanced.prickly": "皮刺",
+
+  "effect.quartz_enhanced.prickly.description": "受到近战攻击时，对攻击者造成荆棘反伤。等级越高，反伤倍率越高",
+
   "sound.quartz_enhanced.quartz_crush": "石英：磨碎",
 
   "advancements.quartz_enhanced.root.title": "石英增强",
