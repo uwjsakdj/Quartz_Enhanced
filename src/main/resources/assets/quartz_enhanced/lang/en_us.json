@@ -46,6 +46,14 @@
   "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "Shattered quartz deals damage to enemies",
   "tooltip.quartz_enhanced.fd_missing": "Install Farmer's Delight to unlock more features",
   "tooltip.quartz_enhanced.armor.nature_quartz.desc": "A living armor brimming with natural vitality",
+  "tooltip.quartz_enhanced.honey_pudding.clear_effect": "Clears one random harmful effect",
+  "tooltip.quartz_enhanced.honey_pudding.regen": "Regeneration I (1:30)",
+  "tooltip.quartz_enhanced.honey_pudding.comfort": "Comfort I (1:00)",
+  "tooltip.quartz_enhanced.nether_stew.fire_resist": "Fire Resistance (2:00)",
+  "tooltip.quartz_enhanced.nether_stew.nourishment": "Nourishment (1:00)",
+  "tooltip.quartz_enhanced.sweet_soup.speed": "Speed I (1:00)",
+  "tooltip.quartz_enhanced.sweet_soup.dig_speed": "Haste I (1:30)",
+  "tooltip.quartz_enhanced.sweet_soup.comfort": "Comfort I (1:30)",
 
   "itemGroup.quartz_enhanced_tab": "Quartz enhanced Tab",
 
@@ -77,5 +85,11 @@
 
   "jei.quartz_enhanced.quartz_powder.info": "Right-click Obsidian with Quartz to start grinding. Quartz Powder is obtained after 2 seconds.\nMovement speed is greatly reduced during grinding. Switching items or moving away will cancel.",
   "jei.quartz_enhanced.resonance": "Resonance",
-  "jei.quartz_enhanced.safety": "Safety: %s%%"
+  "jei.quartz_enhanced.safety": "Safety: %s%%",
+  "jei.quartz_enhanced.grinding.title": "Grinding",
+  "jei.quartz_enhanced.grinding.tooltip.title": "Drop Chances:",
+  "jei.quartz_enhanced.grinding.tooltip.4": "4x Quartz Powder: %s",
+  "jei.quartz_enhanced.grinding.tooltip.3": "3x Quartz Powder: %s",
+  "jei.quartz_enhanced.grinding.tooltip.2": "2x Quartz Powder: %s",
+  "jei.quartz_enhanced.grinding.tooltip.1": "1x Quartz Powder: %s"
 }

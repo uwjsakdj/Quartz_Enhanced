@@ -47,6 +47,14 @@
   "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "破碎的石英会对敌人带来伤害",
   "tooltip.quartz_enhanced.fd_missing": "安装农夫乐事解锁更多功能",
   "tooltip.quartz_enhanced.armor.nature_quartz.desc": "蕴含自然生命力的盔甲",
+  "tooltip.quartz_enhanced.honey_pudding.clear_effect": "清除一个随机负面效果",
+  "tooltip.quartz_enhanced.honey_pudding.regen": "生命恢复 I（1:30）",
+  "tooltip.quartz_enhanced.honey_pudding.comfort": "舒适 I（1:00）",
+  "tooltip.quartz_enhanced.nether_stew.fire_resist": "抗火（2:00）",
+  "tooltip.quartz_enhanced.nether_stew.nourishment": "滋养（1:00）",
+  "tooltip.quartz_enhanced.sweet_soup.speed": "速度 I（1:00）",
+  "tooltip.quartz_enhanced.sweet_soup.dig_speed": "急迫 I（1:30）",
+  "tooltip.quartz_enhanced.sweet_soup.comfort": "舒适 I（1:30）",
 
   "message.quartz_enhanced.insufficient_experience": "经验不足！需要至少45级经验才能释放此法术。",
 
@@ -77,5 +85,11 @@
 
   "jei.quartz_enhanced.quartz_powder.info": "手持石英右键黑曜石，2秒后自动研磨获得石英粉。\n研磨期间移速大幅降低，切换物品或远离黑曜石会中断研磨。",
   "jei.quartz_enhanced.resonance": "共鸣",
-  "jei.quartz_enhanced.safety": "安全性: %s%%"
+  "jei.quartz_enhanced.safety": "安全性: %s%%",
+  "jei.quartz_enhanced.grinding.title": "研磨",
+  "jei.quartz_enhanced.grinding.tooltip.title": "产出概率：",
+  "jei.quartz_enhanced.grinding.tooltip.4": "4 个石英粉：%s",
+  "jei.quartz_enhanced.grinding.tooltip.3": "3 个石英粉：%s",
+  "jei.quartz_enhanced.grinding.tooltip.2": "2 个石英粉：%s",
+  "jei.quartz_enhanced.grinding.tooltip.1": "1 个石英粉：%s"
 }
