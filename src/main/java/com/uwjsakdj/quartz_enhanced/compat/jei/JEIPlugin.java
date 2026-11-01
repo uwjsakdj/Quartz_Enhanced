@@ -9,15 +9,14 @@ import com.uwjsakdj.quartz_enhanced.recipe.ResonanceRecipe;
 import com.uwjsakdj.quartz_enhanced.registry.ModMenuTypes;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.registration.IRecipeTransferRegistration;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -25,7 +24,6 @@ import java.util.List;
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
 
-    // 修复：使用新的 ResourceLocation 构造方式
     private static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(Quartz_Enhanced.MOD_ID, "jei_plugin");
 
     @Override
@@ -36,30 +34,37 @@ public class JEIPlugin implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(
-                new ResonanceRecipeCategory(registration.getJeiHelpers().getGuiHelper())
+                new ResonanceRecipeCategory(registration.getJeiHelpers().getGuiHelper()),
+                // 注册研磨页面
+                new GrindingRecipeCategory(registration.getJeiHelpers().getGuiHelper())
         );
     }
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        registration.addIngredientInfo(
-                new ItemStack(ModItems.QUARTZ_POWDER.get()),
-                VanillaTypes.ITEM_STACK,
-                Component.translatable("jei.quartz_enhanced.quartz_powder.info")
-        );
-
+        // 注册共鸣工作台配方
         if (Minecraft.getInstance().level != null) {
             List<ResonanceRecipe> recipes = Minecraft.getInstance().level.getRecipeManager()
                     .getAllRecipesFor(ModRecipes.RESONANCE_TYPE.get());
             registration.addRecipes(ResonanceRecipeCategory.RECIPE_TYPE, recipes);
         }
+
+        // 注册研磨伪配方（直接塞入单例）
+        registration.addRecipes(GrindingRecipeCategory.TYPE, List.of(GrindingRecipe.INSTANCE));
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+        // 共鸣工作台催化剂
         registration.addRecipeCatalyst(
                 new ItemStack(ModBlocks.RESONANCE_WORKBENCH.get()),
                 ResonanceRecipeCategory.RECIPE_TYPE
+        );
+
+        // 黑曜石研磨催化剂
+        registration.addRecipeCatalyst(
+                new ItemStack(Items.OBSIDIAN),
+                GrindingRecipeCategory.TYPE
         );
     }
 
