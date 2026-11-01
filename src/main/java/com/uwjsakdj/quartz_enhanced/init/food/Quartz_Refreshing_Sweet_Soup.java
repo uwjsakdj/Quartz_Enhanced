@@ -1,5 +1,7 @@
 package com.uwjsakdj.quartz_enhanced.init.food;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -7,11 +9,15 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class Quartz_Refreshing_Sweet_Soup extends Item {
 
@@ -26,46 +32,51 @@ public class Quartz_Refreshing_Sweet_Soup extends Item {
         super(new Item.Properties().stacksTo(1).food(SOUP_FOOD));
     }
 
+    // ─── Tooltip ───
+    @Override
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+
+        // 基础效果：速度与急迫
+        tooltip.add(Component.translatable("tooltip.quartz_enhanced.sweet_soup.speed")
+                .withStyle(ChatFormatting.BLUE));
+        tooltip.add(Component.translatable("tooltip.quartz_enhanced.sweet_soup.dig_speed")
+                .withStyle(ChatFormatting.BLUE));
+
+        // 兼容农夫乐事的效果
+        if (ModList.get().isLoaded("farmersdelight")) {
+            tooltip.add(Component.translatable("tooltip.quartz_enhanced.sweet_soup.comfort")
+                    .withStyle(ChatFormatting.BLUE));
+        }
+    }
+
     @Override
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity) {
 
         ItemStack resultStack = super.finishUsingItem(stack, level, entity);
 
         if (entity instanceof Player player && !level.isClientSide) {
-
             if (ModList.get().isLoaded("farmersdelight")) {
                 applyComfortEffect(player);
             }
-
-            if (player.getAbilities().instabuild) {
-                return stack;
-            }
         }
 
-        if (entity instanceof Player player && !player.getAbilities().instabuild) {
-            return new ItemStack(Items.BOWL);
-        }
-
-        // 如果是非玩家实体或其他情况，返回 super 的结果
-        return resultStack;
+        //优化点：合并创造模式与非创造模式的判断，参考原版蘑菇煲的极简逻辑
+        return entity instanceof Player player && player.isCreative() ? resultStack : new ItemStack(Items.BOWL);
     }
 
     private void applyComfortEffect(Player player) {
         try {
-            // 农夫乐事 1.20.1 的效果注册类通常是 vectorwing.farmersdelight.common.registry.ModEffects
             Class<?> modEffectsClass = Class.forName("vectorwing.farmersdelight.common.registry.ModEffects");
-
             java.lang.reflect.Field comfortField = modEffectsClass.getDeclaredField("COMFORT");
             comfortField.setAccessible(true);
             Object effectObj = comfortField.get(null);
 
-            if (effectObj instanceof MobEffect) {
-                MobEffect comfortEffect = (MobEffect) effectObj;
-
+            if (effectObj instanceof MobEffect comfortEffect) {
                 player.addEffect(new MobEffectInstance(comfortEffect, 1800, 0));
             }
         } catch (Exception e) {
-            // e.printStackTrace();
+            // 忽略异常
         }
     }
 }

@@ -88,12 +88,14 @@ public class ReinforcedQuartzKnife extends SwordItem {
         if (enchantment == Enchantments.BLOCK_EFFICIENCY) {
             return true;
         }
-        // 背刺附魔（仅在农夫乐事安装时生效）
+
+        // 背刺附魔兼容性（仅在农夫乐事安装时生效）
         if (ModList.get().isLoaded("farmersdelight")) {
             ResourceLocation id = BuiltInRegistries.ENCHANTMENT.getKey(enchantment);
-            return id != null && id.equals(new ResourceLocation("farmersdelight", "backstabbing"));
+            // 使用优化后的安全比较逻辑，直接比对 namespace 和 path
+            return id != null && "farmersdelight".equals(id.getNamespace()) && "backstabbing".equals(id.getPath());
         }
-        return false;
 
+        return false;
     }
 }

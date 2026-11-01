@@ -1,5 +1,7 @@
 package com.uwjsakdj.quartz_enhanced.init.food;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -9,20 +11,19 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class Quartz_Honey_Pudding extends Item {
 
-    // 饱食度 6 点
     private static final int NUTRITION = 6;
-    // 饱和度系数：总饱和度 4.8 = 6 * 0.8
     private static final float SATURATION_MOD = 0.8F;
-    // 生命恢复 I 持续 90 秒 = 1800 游戏刻
     private static final int REGEN_TICKS = 90 * 20;
 
     public Quartz_Honey_Pudding() {
@@ -34,16 +35,32 @@ public class Quartz_Honey_Pudding extends Item {
                 .stacksTo(1));
     }
 
-    // 进食动画
     @Override
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         return UseAnim.EAT;
     }
 
-    // 进食时长：
     @Override
     public int getUseDuration(@NotNull ItemStack stack) {
         return 32;
+    }
+
+    // ─── Tooltip ───
+    @Override
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+
+        // 基础效果
+        tooltip.add(Component.translatable("tooltip.quartz_enhanced.honey_pudding.clear_effect")
+                .withStyle(ChatFormatting.BLUE));
+        tooltip.add(Component.translatable("tooltip.quartz_enhanced.honey_pudding.regen")
+                .withStyle(ChatFormatting.BLUE));
+
+        // 兼容农夫乐事的效果
+        if (ModList.get().isLoaded("farmersdelight")) {
+            tooltip.add(Component.translatable("tooltip.quartz_enhanced.honey_pudding.comfort")
+                    .withStyle(ChatFormatting.BLUE));
+        }
     }
 
     @Override
@@ -51,60 +68,43 @@ public class Quartz_Honey_Pudding extends Item {
 
         ItemStack resultStack = super.finishUsingItem(stack, level, entity);
 
-        if (!(entity instanceof Player player) || level.isClientSide) {
-            return resultStack;
-        }
+        // 仅在服务端处理效果
+        if (entity instanceof Player player && !level.isClientSide) {
+            List<MobEffect> harmfulEffects = player.getActiveEffects().stream()
+                    .map(MobEffectInstance::getEffect)
+                    .filter(effect -> !effect.isBeneficial())
+                    .toList();
 
-        List<MobEffect> harmfulEffects = player.getActiveEffects().stream()
-                .map(MobEffectInstance::getEffect)
-                .filter(effect -> !effect.isBeneficial())
-                .toList();
-        if (!harmfulEffects.isEmpty()) {
-            MobEffect randomEffect = harmfulEffects.get(player.getRandom().nextInt(harmfulEffects.size()));
-            player.removeEffect(randomEffect);
-        }
+            if (!harmfulEffects.isEmpty()) {
+                MobEffect randomEffect = harmfulEffects.get(player.getRandom().nextInt(harmfulEffects.size()));
+                player.removeEffect(randomEffect);
+            }
 
-        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, REGEN_TICKS, 0));
+            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, REGEN_TICKS, 0));
 
-        if (ModList.get().isLoaded("farmersdelight")) {
-            applyComfortEffect(player);
-        }
-
-        if (player.isCreative()) {
-
-            return stack;
-        } else {
-
-            if (resultStack.isEmpty()) {
-
-                return new ItemStack(Items.BOWL);
-            } else {
-
-                if (!player.getInventory().add(new ItemStack(Items.BOWL))) {
-
-                    player.drop(new ItemStack(Items.BOWL), false);
-                }
-                return resultStack;
+            if (ModList.get().isLoaded("farmersdelight")) {
+                applyComfortEffect(player);
             }
         }
+        // 如果是创造模式玩家，返回 resultStack（不消耗物品）
+        // 否则（生存玩家或生物），直接返回一个空碗
+        return entity instanceof Player player && player.isCreative() ? resultStack : new ItemStack(Items.BOWL);
     }
 
     private void applyComfortEffect(Player player) {
         try {
-            // 农夫乐事 1.20.1 的效果注册类通常是 vectorwing.farmersdelight.common.registry.ModEffects
             Class<?> modEffectsClass = Class.forName("vectorwing.farmersdelight.common.registry.ModEffects");
-
             java.lang.reflect.Field comfortField = modEffectsClass.getDeclaredField("COMFORT");
             comfortField.setAccessible(true);
             Object effectObj = comfortField.get(null);
 
-            if (effectObj instanceof MobEffect) {
-                MobEffect comfortEffect = (MobEffect) effectObj;
-                // 添加效果：舒适 I，持续 60秒 (1200 ticks)
+            // 👇 优化点：使用 Java 17 的模式匹配，省去强制类型转换
+            if (effectObj instanceof MobEffect comfortEffect) {
+                // 舒适 I，持续 60秒（1200 ticks）
                 player.addEffect(new MobEffectInstance(comfortEffect, 1200, 0));
             }
         } catch (Exception e) {
-            // e.printStackTrace();
+            // 忽略异常
         }
     }
 }

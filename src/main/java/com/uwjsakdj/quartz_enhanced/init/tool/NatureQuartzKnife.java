@@ -123,7 +123,8 @@ public class NatureQuartzKnife extends SwordItem {
         }
         if (ModList.get().isLoaded("farmersdelight")) {
             ResourceLocation id = BuiltInRegistries.ENCHANTMENT.getKey(enchantment);
-            return id != null && id.equals(ResourceLocation.parse("farmersdelight:backstabbing"));
+            //优化后的安全比较逻辑，直接比对 namespace 和 path
+            return id != null && "farmersdelight".equals(id.getNamespace()) && "backstabbing".equals(id.getPath());
         }
         return false;
     }
