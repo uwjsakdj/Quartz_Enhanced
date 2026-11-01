@@ -85,7 +85,7 @@ public class ResonanceRecipeCategory implements IRecipeCategory<ResonanceRecipe>
                 .addIngredients(recipe.getIngredients().get(3));
 
         // 槽 5：输出槽
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 30)
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 109, 31)
                 .addItemStack(recipe.getResultItem(null));
     }
 

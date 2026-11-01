@@ -59,7 +59,7 @@ public class ResonanceWorkbenchMenu extends AbstractContainerMenu {
         this.addSlot(new Slot(container, 4, 54, 54)); // 右下
 
         // 输出槽 5：不允许放入
-        this.addSlot(new Slot(container, 5, 112, 33) {
+        this.addSlot(new Slot(container, 5, 113, 35) {
             @Override
             public boolean mayPlace(ItemStack stack) {
                 return false;
