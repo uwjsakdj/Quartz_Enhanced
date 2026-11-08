@@ -19,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class Quartz_Refreshing_Sweet_Soup extends Item {
+public class QuartzRefreshingSweetSoup extends Item {
 
     private static final FoodProperties SOUP_FOOD = new FoodProperties.Builder()
             .nutrition(6)
@@ -28,7 +28,7 @@ public class Quartz_Refreshing_Sweet_Soup extends Item {
             .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1800, 0), 1.0F)
             .build();
 
-    public Quartz_Refreshing_Sweet_Soup() {
+    public QuartzRefreshingSweetSoup() {
         super(new Item.Properties().stacksTo(1).food(SOUP_FOOD));
     }
 

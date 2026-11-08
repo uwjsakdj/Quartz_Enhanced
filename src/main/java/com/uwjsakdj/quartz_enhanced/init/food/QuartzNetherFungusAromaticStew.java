@@ -22,13 +22,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class Quartz_Nether_Fungus_Aromatic_Stew extends Item {
+public class QuartzNetherFungusAromaticStew extends Item {
 
     private static final int NUTRITION = 7;
     private static final float SATURATION_MOD = 0.6F;
     private static final int FIRE_RESIST_TICKS = 120 * 20;
 
-    public Quartz_Nether_Fungus_Aromatic_Stew() {
+    public QuartzNetherFungusAromaticStew() {
         super(new Item.Properties()
                 .food(new FoodProperties.Builder()
                         .nutrition(NUTRITION)

@@ -20,13 +20,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class Quartz_Honey_Pudding extends Item {
+public class QuartzHoneyPudding extends Item {
 
     private static final int NUTRITION = 6;
     private static final float SATURATION_MOD = 0.8F;
     private static final int REGEN_TICKS = 90 * 20;
 
-    public Quartz_Honey_Pudding() {
+    public QuartzHoneyPudding() {
         super(new Item.Properties()
                 .food(new FoodProperties.Builder()
                         .nutrition(NUTRITION)
