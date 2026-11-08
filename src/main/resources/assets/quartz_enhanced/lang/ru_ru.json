@@ -34,6 +34,8 @@
   "item.quartz_enhanced.nature_quartz_chestplate": "Природный кварцевый нагрудник",
   "item.quartz_enhanced.nature_quartz_leggings": "Природные кварцевые леггинсы",
   "item.quartz_enhanced.nature_quartz_boots": "Природные кварцевые ботинки",
+  "item.quartz_enhanced.quartz_splinter": "Кварцевый осколок",
+  "item.quartz_enhanced.quartz_splinter_bread": "Хлеб с кварцевыми осколками",
 
   "container.quartz_enhanced.resonance_workbench": "Резонансный верстак",
 
@@ -46,10 +48,22 @@
   "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "§7Разбитый кварц наносит урон врагам при контакте",
   "tooltip.quartz_enhanced.fd_missing": "Установите Farmer's Delight, чтобы открыть больше функций",
   "tooltip.quartz_enhanced.armor.nature_quartz.desc": "Броня, наполненная жизненной силой природы",
+  "tooltip.quartz_enhanced.honey_pudding.clear_effect": "Убирает один случайный негативный эффект",
+  "tooltip.quartz_enhanced.honey_pudding.regen": "Регенерация I (1:30)",
+  "tooltip.quartz_enhanced.honey_pudding.comfort": "Комфорт I (1:00)",
+  "tooltip.quartz_enhanced.nether_stew.fire_resist": "Огнестойкость (2:00)",
+  "tooltip.quartz_enhanced.nether_stew.nourishment": "Питание (1:00)",
+  "tooltip.quartz_enhanced.sweet_soup.speed": "Скорость I (1:00)",
+  "tooltip.quartz_enhanced.sweet_soup.dig_speed": "Спешка I (1:30)",
+  "tooltip.quartz_enhanced.sweet_soup.comfort": "Комфорт I (1:30)",
+  "tooltip.quartz_enhanced.quartz_splinter_bread.prickly": "Шипастость I (1:00)",
 
   "message.quartz_enhanced.insufficient_experience": "Недостаточно опыта! Требуется минимум 45 уровень, чтобы произнести это заклинание.",
 
   "itemGroup.quartz_enhanced_tab": "Усиленный кварц",
+
+  "effect.quartz_enhanced.prickly": "Шипастость",
+  "effect.quartz_enhanced.prickly.description": "При получении атаки в ближнем бою наносит ответный урон шипами атакующему. Чем выше уровень, тем выше множитель ответного урона.",
 
   "sound.quartz_enhanced.quartz_crush": "Кварц: измельчение",
 
@@ -69,7 +83,17 @@
   "advancements.quartz_enhanced.nature_quartz.description": "Получить природный кварцевый слиток",
   "advancements.quartz_enhanced.nature_armor.title": "Оживленный",
   "advancements.quartz_enhanced.nature_armor.description": "Жизненная сила природы не только дала жизнь слитку, но и стала твоей надежной защитой.",
+  "advancements.quartz_enhanced.crunchy.title": "Хрустящий",
+  "advancements.quartz_enhanced.crunchy.description": "Съешь хрустящий на зубах хлеб с кварцевыми осколками",
 
-  "jei.quartz_enhanced.quartz_powder.info": "Возьмите кварц в руку и нажмите ПКМ по обсидиану, через 2 секунды начнется автоматическое измельчение. \nВо время измельчения скорость передвижения сильно снижается. Переключение предмета или отход от обсидиана прервет процесс.",
-  "jei.quartz_enhanced.resonance": "Резонанс"
+  "jei.quartz_enhanced.resonance": "Резонанс",
+  "jei.quartz_enhanced.safety": "Безопасность: %s%%",
+  "jei.quartz_enhanced.grinding.title": "Измельчение",
+  "jei.quartz_enhanced.grinding.tooltip.title": "Шансы выпадения:",
+  "jei.quartz_enhanced.grinding.tooltip.4": "4 шт. кварцевой пыли: %s",
+  "jei.quartz_enhanced.grinding.tooltip.3": "3 шт. кварцевой пыли: %s",
+  "jei.quartz_enhanced.grinding.tooltip.2": "2 шт. кварцевой пыли: %s",
+  "jei.quartz_enhanced.grinding.tooltip.1": "1 шт. кварцевой пыли: %s",
+  "jei.quartz_enhanced.grinding.tooltip.splinter_2": "2 шт. кварцевого осколка: %s",
+  "jei.quartz_enhanced.grinding.tooltip.splinter_1": "1 шт. кварцевого осколка: %s"
 }

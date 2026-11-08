@@ -34,6 +34,8 @@
   "item.quartz_enhanced.nature_quartz_chestplate": "自然石英チェストプレート",
   "item.quartz_enhanced.nature_quartz_leggings": "自然石英レギンス",
   "item.quartz_enhanced.nature_quartz_boots": "自然石英ブーツ",
+  "item.quartz_enhanced.quartz_splinter": "石英の破片",
+  "item.quartz_enhanced.quartz_splinter_bread": "石英の破片パン",
 
   "container.quartz_enhanced.resonance_workbench": "共鳴作業台",
 
@@ -46,10 +48,22 @@
   "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "§7砕けた石英が敵にダメージを与えます",
   "tooltip.quartz_enhanced.fd_missing": "Farmer's Delightを導入して機能を解除しましょう",
   "tooltip.quartz_enhanced.armor.nature_quartz.desc": "自然の生命力を秘めた防具",
+  "tooltip.quartz_enhanced.honey_pudding.clear_effect": "ランダムなマイナス効果を1つ解除する",
+  "tooltip.quartz_enhanced.honey_pudding.regen": "再生 I (1:30)",
+  "tooltip.quartz_enhanced.honey_pudding.comfort": "安らぎ I (1:00)",
+  "tooltip.quartz_enhanced.nether_stew.fire_resist": "火炎耐性 (2:00)",
+  "tooltip.quartz_enhanced.nether_stew.nourishment": "滋養 (1:00)",
+  "tooltip.quartz_enhanced.sweet_soup.speed": "移動速度上昇 I (1:00)",
+  "tooltip.quartz_enhanced.sweet_soup.dig_speed": "採掘速度上昇 I (1:30)",
+  "tooltip.quartz_enhanced.sweet_soup.comfort": "安らぎ I (1:30)",
+  "tooltip.quartz_enhanced.quartz_splinter_bread.prickly": "トゲトゲ I (1:00)",
 
   "message.quartz_enhanced.insufficient_experience": "経験値が足りません！この呪文を発動するにはレベル45以上が必要です。",
 
   "itemGroup.quartz_enhanced_tab": "増強・石英",
+
+  "effect.quartz_enhanced.prickly": "トゲトゲ",
+  "effect.quartz_enhanced.prickly.description": "近接攻撃を受けた際、攻撃者にトゲの反撃ダメージを与えます。レベルが高いほど反撃倍率が上がります。",
 
   "sound.quartz_enhanced.quartz_crush": "石英：粉砕",
 
@@ -69,7 +83,17 @@
   "advancements.quartz_enhanced.nature_quartz.description": "自然石英インゴットを入手する",
   "advancements.quartz_enhanced.nature_armor.title": "生き生きと",
   "advancements.quartz_enhanced.nature_armor.description": "自然の生命力はインゴットに宿っただけでなく、あなたを守る堅牢な防壁にもなりました。",
+  "advancements.quartz_enhanced.crunchy.title": "バリバリ",
+  "advancements.quartz_enhanced.crunchy.description": "舌触りがジャリジャリする石英の破片パンを食べる",
 
-  "jei.quartz_enhanced.quartz_powder.info": "石英を手に持ち、黒曜石を右クリックすると、2秒後に自動的に粉砕されて石英の粉を獲得します。\n粉砕中は移動速度が大幅に低下し、アイテムの切り替えや黒曜石から離れると粉砕が中断されます。",
-  "jei.quartz_enhanced.resonance": "共鳴"
+  "jei.quartz_enhanced.resonance": "共鳴",
+  "jei.quartz_enhanced.safety": "安全性: %s%%",
+  "jei.quartz_enhanced.grinding.title": "粉砕",
+  "jei.quartz_enhanced.grinding.tooltip.title": "排出確率：",
+  "jei.quartz_enhanced.grinding.tooltip.4": "石英の粉 4個：%s",
+  "jei.quartz_enhanced.grinding.tooltip.3": "石英の粉 3個：%s",
+  "jei.quartz_enhanced.grinding.tooltip.2": "石英の粉 2個：%s",
+  "jei.quartz_enhanced.grinding.tooltip.1": "石英の粉 1個：%s",
+  "jei.quartz_enhanced.grinding.tooltip.splinter_2": "石英の破片 2個：%s",
+  "jei.quartz_enhanced.grinding.tooltip.splinter_1": "石英の破片 1個：%s"
 }

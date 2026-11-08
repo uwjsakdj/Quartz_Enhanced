@@ -34,6 +34,8 @@
   "item.quartz_enhanced.nature_quartz_chestplate": "自然石英胸甲",
   "item.quartz_enhanced.nature_quartz_leggings": "自然石英護腿",
   "item.quartz_enhanced.nature_quartz_boots": "自然石英靴子",
+  "item.quartz_enhanced.quartz_splinter": "石英碎刺",
+  "item.quartz_enhanced.quartz_splinter_bread": "石英碎刺麵包",
 
   "container.quartz_enhanced.resonance_workbench": "共鳴工作台",
 
@@ -46,10 +48,22 @@
   "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "§7破碎的石英會對敵人帶來傷害",
   "tooltip.quartz_enhanced.fd_missing": "安裝農夫樂事解鎖更多功能",
   "tooltip.quartz_enhanced.armor.nature_quartz.desc": "蘊含自然生命力的盔甲",
+  "tooltip.quartz_enhanced.honey_pudding.clear_effect": "清除一個隨機負面效果",
+  "tooltip.quartz_enhanced.honey_pudding.regen": "生命恢復 I（1:30）",
+  "tooltip.quartz_enhanced.honey_pudding.comfort": "舒適 I（1:00）",
+  "tooltip.quartz_enhanced.nether_stew.fire_resist": "抗火（2:00）",
+  "tooltip.quartz_enhanced.nether_stew.nourishment": "滋養（1:00）",
+  "tooltip.quartz_enhanced.sweet_soup.speed": "速度 I（1:00）",
+  "tooltip.quartz_enhanced.sweet_soup.dig_speed": "急迫 I（1:30）",
+  "tooltip.quartz_enhanced.sweet_soup.comfort": "舒適 I（1:30）",
+  "tooltip.quartz_enhanced.quartz_splinter_bread.prickly": "皮刺 I（1:00）",
 
   "message.quartz_enhanced.insufficient_experience": "經驗不足！需要至少45級經驗才能釋放此法術。",
 
   "itemGroup.quartz_enhanced_tab": "增強·石英",
+
+  "effect.quartz_enhanced.prickly": "皮刺",
+  "effect.quartz_enhanced.prickly.description": "受到近戰攻擊時，對攻擊者造成荊棘反傷。等級越高，反傷倍率越高",
 
   "sound.quartz_enhanced.quartz_crush": "石英：磨碎",
 
@@ -69,7 +83,17 @@
   "advancements.quartz_enhanced.nature_quartz.description": "獲得自然石英錠",
   "advancements.quartz_enhanced.nature_armor.title": "栩栩如生",
   "advancements.quartz_enhanced.nature_armor.description": "自然的生命力不僅賦予了錠，也化作了守護你的堅實壁壘。",
+  "advancements.quartz_enhanced.crunchy.title": "嘎嘣脆",
+  "advancements.quartz_enhanced.crunchy.description": "吃下一個咂嘴的石英碎刺麵包",
 
-  "jei.quartz_enhanced.quartz_powder.info": "手持石英右鍵黑曜石，2秒後自動研磨獲得石英粉。\n研磨期間移速大幅降低，切換物品或遠離黑曜石會中斷研磨。",
-  "jei.quartz_enhanced.resonance": "共鳴"
+  "jei.quartz_enhanced.resonance": "共鳴",
+  "jei.quartz_enhanced.safety": "安全性: %s%%",
+  "jei.quartz_enhanced.grinding.title": "研磨",
+  "jei.quartz_enhanced.grinding.tooltip.title": "產出機率：",
+  "jei.quartz_enhanced.grinding.tooltip.4": "4 個石英粉：%s",
+  "jei.quartz_enhanced.grinding.tooltip.3": "3 個石英粉：%s",
+  "jei.quartz_enhanced.grinding.tooltip.2": "2 個石英粉：%s",
+  "jei.quartz_enhanced.grinding.tooltip.1": "1 個石英粉：%s",
+  "jei.quartz_enhanced.grinding.tooltip.splinter_2": "2x 石英碎刺：%s",
+  "jei.quartz_enhanced.grinding.tooltip.splinter_1": "1x 石英碎刺：%s"
 }

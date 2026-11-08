@@ -34,6 +34,8 @@
   "item.quartz_enhanced.nature_quartz_chestplate": "자연 석영 흉갑",
   "item.quartz_enhanced.nature_quartz_leggings": "자연 석영 레깅스",
   "item.quartz_enhanced.nature_quartz_boots": "자연 석영 부츠",
+  "item.quartz_enhanced.quartz_splinter": "석영 파편",
+  "item.quartz_enhanced.quartz_splinter_bread": "석영 파편 빵",
 
   "container.quartz_enhanced.resonance_workbench": "공명 작업대",
 
@@ -46,10 +48,22 @@
   "tooltip.quartz_enhanced.armor.reinforced_quartz.desc": "§7깨진 석영이 적에게 피해를 입힙니다",
   "tooltip.quartz_enhanced.fd_missing": "Farmer's Delight를 설치하여 더 많은 기능을 해금하세요",
   "tooltip.quartz_enhanced.armor.nature_quartz.desc": "자연의 생명력이 깃든 갑옷",
+  "tooltip.quartz_enhanced.honey_pudding.clear_effect": "무작위 해로운 효과 1개 제거",
+  "tooltip.quartz_enhanced.honey_pudding.regen": "재생 I (1:30)",
+  "tooltip.quartz_enhanced.honey_pudding.comfort": "편안함 I (1:00)",
+  "tooltip.quartz_enhanced.nether_stew.fire_resist": "화염 저항 (2:00)",
+  "tooltip.quartz_enhanced.nether_stew.nourishment": "영양 공급 (1:00)",
+  "tooltip.quartz_enhanced.sweet_soup.speed": "속도 증가 I (1:00)",
+  "tooltip.quartz_enhanced.sweet_soup.dig_speed": "성급함 I (1:30)",
+  "tooltip.quartz_enhanced.sweet_soup.comfort": "편안함 I (1:30)",
+  "tooltip.quartz_enhanced.quartz_splinter_bread.prickly": "가시 I (1:00)",
 
   "message.quartz_enhanced.insufficient_experience": "경험이 부족합니다! 이 주문을 시전하려면 최소 45레벨이 필요합니다.",
 
   "itemGroup.quartz_enhanced_tab": "증강·석영",
+
+  "effect.quartz_enhanced.prickly": "가시",
+  "effect.quartz_enhanced.prickly.description": "근접 공격을 받을 때 공격자에게 가시 피해를 반사합니다. 레벨이 높을수록 반사 피해 배율이 증가합니다.",
 
   "sound.quartz_enhanced.quartz_crush": "석영: 분쇄",
 
@@ -69,7 +83,17 @@
   "advancements.quartz_enhanced.nature_quartz.description": "자연 석영 주괴를 획득하세요",
   "advancements.quartz_enhanced.nature_armor.title": "생동감",
   "advancements.quartz_enhanced.nature_armor.description": "자연의 생명력은 주괴에 깃들었을 뿐만 아니라, 당신을 지키는 든든한 방벽이 되었습니다.",
+  "advancements.quartz_enhanced.crunchy.title": "바삭바삭",
+  "advancements.quartz_enhanced.crunchy.description": "입안에서 오도독거리는 석영 파편 빵을 먹다",
 
-  "jei.quartz_enhanced.quartz_powder.info": "손에 석영을 들고 흑요석을 우클릭하면 2초 후 자동으로 분쇄되어 석영 가루를 얻습니다.\n분쇄하는 동안 이동 속도가 크게 감소하며, 아이템을 바꾸거나 흑요석에서 멀어지면 분쇄가 중단됩니다.",
-  "jei.quartz_enhanced.resonance": "공명"
+  "jei.quartz_enhanced.resonance": "공명",
+  "jei.quartz_enhanced.safety": "안전성: %s%%",
+  "jei.quartz_enhanced.grinding.title": "분쇄",
+  "jei.quartz_enhanced.grinding.tooltip.title": "배출 확률:",
+  "jei.quartz_enhanced.grinding.tooltip.4": "석영 가루 4개: %s",
+  "jei.quartz_enhanced.grinding.tooltip.3": "석영 가루 3개: %s",
+  "jei.quartz_enhanced.grinding.tooltip.2": "석영 가루 2개: %s",
+  "jei.quartz_enhanced.grinding.tooltip.1": "석영 가루 1개: %s",
+  "jei.quartz_enhanced.grinding.tooltip.splinter_2": "석영 파편 2개: %s",
+  "jei.quartz_enhanced.grinding.tooltip.splinter_1": "석영 파편 1개: %s"
 }
