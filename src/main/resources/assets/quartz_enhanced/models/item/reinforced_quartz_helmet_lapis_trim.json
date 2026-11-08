@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "quartz_enhanced:item/reinforced_quartz_helmet",
+    "layer1": "minecraft:trims/items/helmet_trim_lapis"
+  }
+}

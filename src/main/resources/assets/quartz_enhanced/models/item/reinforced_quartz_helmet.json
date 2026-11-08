@@ -2,5 +2,17 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "quartz_enhanced:item/reinforced_quartz_helmet"
-  }
+  },
+  "overrides": [
+    { "predicate": { "trim_type": 0.1 }, "model": "quartz_enhanced:item/reinforced_quartz_helmet_quartz_trim" },
+    { "predicate": { "trim_type": 0.2 }, "model": "quartz_enhanced:item/reinforced_quartz_helmet_iron_trim" },
+    { "predicate": { "trim_type": 0.3 }, "model": "quartz_enhanced:item/reinforced_quartz_helmet_netherite_trim" },
+    { "predicate": { "trim_type": 0.4 }, "model": "quartz_enhanced:item/reinforced_quartz_helmet_redstone_trim" },
+    { "predicate": { "trim_type": 0.5 }, "model": "quartz_enhanced:item/reinforced_quartz_helmet_copper_trim" },
+    { "predicate": { "trim_type": 0.6 }, "model": "quartz_enhanced:item/reinforced_quartz_helmet_gold_trim" },
+    { "predicate": { "trim_type": 0.7 }, "model": "quartz_enhanced:item/reinforced_quartz_helmet_emerald_trim" },
+    { "predicate": { "trim_type": 0.8 }, "model": "quartz_enhanced:item/reinforced_quartz_helmet_diamond_trim" },
+    { "predicate": { "trim_type": 0.9 }, "model": "quartz_enhanced:item/reinforced_quartz_helmet_lapis_trim" },
+    { "predicate": { "trim_type": 1.0 }, "model": "quartz_enhanced:item/reinforced_quartz_helmet_amethyst_trim" }
+  ]
 }
