@@ -3,8 +3,6 @@ package com.uwjsakdj.quartz_enhanced;
 import com.mojang.logging.LogUtils;
 import com.uwjsakdj.quartz_enhanced.block.ModBlocks;
 import com.uwjsakdj.quartz_enhanced.effect.ModEffects;
-import com.uwjsakdj.quartz_enhanced.init.tool.NatureQuartzAxe;
-import com.uwjsakdj.quartz_enhanced.init.tool.NatureQuartzPickaxe;
 import com.uwjsakdj.quartz_enhanced.item.ModCreativeModeTabs;
 import com.uwjsakdj.quartz_enhanced.item.ModItems;
 import com.uwjsakdj.quartz_enhanced.recipe.ModRecipes;

@@ -24,7 +24,7 @@ public class ModItems {
     public static final RegistryObject<Item> UNSMELT_QUARTZ_MIXTURE =
             ITEMS.register("unsmelted_quartz_mixture", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> QUARTZ_APPLE =
-            ITEMS.register("quartz_apple", () -> new Item(new Item.Properties().food(Quartz_Apple.QUARTZ_APPLE_FOOD)));
+            ITEMS.register("quartz_apple", QuartzApple::new);
     public static final RegistryObject<Item> REINFORCED_QUARTZ_SWORD =
             ITEMS.register("reinforced_quartz_sword", ReinforcedQuartzSword::new);
     public static final RegistryObject<Item> REINFORCED_QUARTZ_PICKAXE =
@@ -44,23 +44,19 @@ public class ModItems {
     public static final RegistryObject<Item> FINE_QUARTZ_JADE =
             ITEMS.register("fine_quartz_jade", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> QUARTZ_REFRESHING_SWEET_SOUP =
-            ITEMS.register("quartz_refreshing_sweet_soup", Quartz_Refreshing_Sweet_Soup::new);
+            ITEMS.register("quartz_refreshing_sweet_soup", QuartzRefreshingSweetSoup::new);
     public static final RegistryObject<Item> QUARTZ_NETHER_FUNGUS_AROMATIC_STEW =
-            ITEMS.register("quartz_nether_fungus_aromatic_stew", Quartz_Nether_Fungus_Aromatic_Stew::new);
+            ITEMS.register("quartz_nether_fungus_aromatic_stew", QuartzNetherFungusAromaticStew::new);
     public static final RegistryObject<Item> QUARTZ_HONEY_PUDDING =
-            ITEMS.register("quartz_honey_pudding", Quartz_Honey_Pudding::new);
+            ITEMS.register("quartz_honey_pudding", QuartzHoneyPudding::new);
     public static final RegistryObject<Item> REINFORCED_QUARTZ_HELMET =
-            ITEMS.register("reinforced_quartz_helmet",
-            () -> new ModArmorItem(ModArmorMaterials.REINFORCED_QUARTZ, ArmorItem.Type.HELMET, new Item.Properties()));
+            ITEMS.register("reinforced_quartz_helmet", () -> new ModArmorItem(ModArmorMaterials.REINFORCED_QUARTZ, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> REINFORCED_QUARTZ_CHESTPLATE =
-            ITEMS.register("reinforced_quartz_chestplate",
-            () -> new ModArmorItem(ModArmorMaterials.REINFORCED_QUARTZ, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+            ITEMS.register("reinforced_quartz_chestplate", () -> new ModArmorItem(ModArmorMaterials.REINFORCED_QUARTZ, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> REINFORCED_QUARTZ_LEGGINGS =
-            ITEMS.register("reinforced_quartz_leggings",
-            () -> new ModArmorItem(ModArmorMaterials.REINFORCED_QUARTZ, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+            ITEMS.register("reinforced_quartz_leggings", () -> new ModArmorItem(ModArmorMaterials.REINFORCED_QUARTZ, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> REINFORCED_QUARTZ_BOOTS =
-            ITEMS.register("reinforced_quartz_boots",
-            () -> new ModArmorItem(ModArmorMaterials.REINFORCED_QUARTZ, ArmorItem.Type.BOOTS, new Item.Properties()));
+            ITEMS.register("reinforced_quartz_boots", () -> new ModArmorItem(ModArmorMaterials.REINFORCED_QUARTZ, ArmorItem.Type.BOOTS, new Item.Properties()));
     public static final RegistryObject<Item> REINFORCED_QUARTZ_KNIFE =
             ITEMS.register("reinforced_quartz_knife", ReinforcedQuartzKnife::new);
     public static final RegistryObject<Item> QUARTZ_POWDER =
@@ -87,14 +83,20 @@ public class ModItems {
             ITEMS.register("nature_quartz_hoe", NatureQuartzHoe::new);
     public static final RegistryObject<Item> NATURE_QUARTZ_KNIFE =
             ITEMS.register("nature_quartz_knife", NatureQuartzKnife::new);
-    public static final RegistryObject<Item> NATURE_QUARTZ_HELMET = ITEMS.register("nature_quartz_helmet",
-            () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.HELMET, new Item.Properties()));
-    public static final RegistryObject<Item> NATURE_QUARTZ_CHESTPLATE = ITEMS.register("nature_quartz_chestplate",
-            () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-    public static final RegistryObject<Item> NATURE_QUARTZ_LEGGINGS = ITEMS.register("nature_quartz_leggings",
-            () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.LEGGINGS, new Item.Properties()));
-    public static final RegistryObject<Item> NATURE_QUARTZ_BOOTS = ITEMS.register("nature_quartz_boots",
-            () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final RegistryObject<Item> NATURE_QUARTZ_HELMET =
+            ITEMS.register("nature_quartz_helmet", () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> NATURE_QUARTZ_CHESTPLATE =
+            ITEMS.register("nature_quartz_chestplate", () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> NATURE_QUARTZ_LEGGINGS =
+            ITEMS.register("nature_quartz_leggings", () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> NATURE_QUARTZ_BOOTS =
+            ITEMS.register("nature_quartz_boots", () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final RegistryObject<Item> QUARTZ_SPLINTER =
+            ITEMS.register("quartz_splinter", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUARTZ_SPLINTER_BREAD =
+            ITEMS.register("quartz_splinter_bread", QuartzSplinterBread::new);
+
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

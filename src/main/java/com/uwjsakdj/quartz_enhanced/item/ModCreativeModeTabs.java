@@ -28,11 +28,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.QUARTZ_REFRESHING_SWEET_SOUP.get());
                         pOutput.accept(ModItems.QUARTZ_NETHER_FUNGUS_AROMATIC_STEW.get());
                         pOutput.accept(ModItems.QUARTZ_HONEY_PUDDING.get());
+                        pOutput.accept(ModItems.QUARTZ_SPLINTER_BREAD.get());
                         pOutput.accept(ModItems.REINFORCED_QUARTZ_SWORD.get());
-                        pOutput.accept(ModItems.REINFORCED_QUARTZ_PICKAXE.get());
                         pOutput.accept(ModItems.REINFORCED_QUARTZ_AXE.get());
-                        pOutput.accept(ModItems.REINFORCED_QUARTZ_HOE.get());
+                        pOutput.accept(ModItems.REINFORCED_QUARTZ_PICKAXE.get());
                         pOutput.accept(ModItems.REINFORCED_QUARTZ_SHOVEL.get());
+                        pOutput.accept(ModItems.REINFORCED_QUARTZ_HOE.get());
                         pOutput.accept(ModItems.REINFORCED_QUARTZ_KNIFE.get());
                         pOutput.accept(ModItems.REINFORCED_QUARTZ_HELMET.get());
                         pOutput.accept(ModItems.REINFORCED_QUARTZ_CHESTPLATE.get());
@@ -42,6 +43,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.QUARTZ_JADE.get());
                         pOutput.accept(ModItems.FINE_QUARTZ_JADE.get());
                         pOutput.accept(ModItems.QUARTZ_POWDER.get());
+                        pOutput.accept(ModItems.QUARTZ_SPLINTER.get());
                         //第二部分
                         pOutput.accept(ModBlocks.RESONANCE_WORKBENCH.get());
                         pOutput.accept(ModItems.RESONANCE_STONE.get());
