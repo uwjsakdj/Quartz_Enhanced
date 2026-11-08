@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "B"
+  ],
+  "key": {
+    "S": {
+      "item": "quartz_enhanced:quartz_splinter"
+    },
+    "B": {
+      "item": "minecraft:bread"
+    }
+  },
+  "result": {
+    "item": "quartz_enhanced:quartz_splinter_bread",
+    "count": 1
+  }
+}

@@ -1,6 +1,6 @@
 package com.uwjsakdj.quartz_enhanced.events;
 
-import com.uwjsakdj.quartz_enhanced.init.food.Quartz_Refreshing_Sweet_Soup;
+import com.uwjsakdj.quartz_enhanced.init.food.QuartzRefreshingSweetSoup;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
@@ -18,7 +18,7 @@ public class CraftingReturnHandler {
         if (event.getEntity().level().isClientSide) return;
 
         // 仅处理石英清润甜汤的合成返还逻辑
-        if (!(event.getCrafting().getItem() instanceof Quartz_Refreshing_Sweet_Soup)) {
+        if (!(event.getCrafting().getItem() instanceof QuartzRefreshingSweetSoup)) {
             return;
         }
 

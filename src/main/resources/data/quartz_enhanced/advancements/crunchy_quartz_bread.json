@@ -1,0 +1,35 @@
+{
+  "parent": "quartz_enhanced:quartz_refreshing_sweet_soup",
+  "display": {
+    "icon": {
+      "item": "quartz_enhanced:quartz_splinter_bread"
+    },
+    "title": {
+      "translate": "advancements.quartz_enhanced.crunchy.title"
+    },
+    "description": {
+      "translate": "advancements.quartz_enhanced.crunchy.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "eat_bread": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "quartz_enhanced:quartz_splinter_bread"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "eat_bread"
+    ]
+  ]
+}

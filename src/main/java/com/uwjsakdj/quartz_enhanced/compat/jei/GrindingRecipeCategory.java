@@ -27,12 +27,13 @@ public class GrindingRecipeCategory implements IRecipeCategory<GrindingRecipe> {
     private final IDrawable background;
     private final IDrawable icon;
     private final IDrawable arrow;
+    private final IDrawable slot; // 👈 把原版格子加回来
 
     public GrindingRecipeCategory(IGuiHelper guiHelper) {
-        //背景宽度扩大到 160，给最右侧的信息图标留出空间
-        this.background = guiHelper.createBlankDrawable(160, 60);
+        this.background = guiHelper.createBlankDrawable(180, 60);
         this.icon = guiHelper.createDrawableItemStack(new ItemStack(Items.OBSIDIAN));
         this.arrow = guiHelper.getRecipeArrow();
+        this.slot = guiHelper.getSlotDrawable(); // 获取原版物品格子
     }
 
     @Override
@@ -57,42 +58,52 @@ public class GrindingRecipeCategory implements IRecipeCategory<GrindingRecipe> {
 
     @Override
     public void setRecipe(@NotNull IRecipeLayoutBuilder builder, @NotNull GrindingRecipe recipe, @NotNull IFocusGroup focuses) {
-        // 左侧：石英输入框 (x=15, y=21)
-        builder.addSlot(RecipeIngredientRole.INPUT, 15, 21)
+        // 左侧：石英输入框
+        builder.addSlot(RecipeIngredientRole.INPUT, 17, 23)
                 .addItemStack(new ItemStack(Items.QUARTZ));
 
-        // 中间：黑曜石 (x=65, y=21)
-        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 65, 21)
-                .addItemStack(new ItemStack(Items.OBSIDIAN));
-
-        // 右侧：石英粉输出框 (x=115, y=21)
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 115, 21)
+        // 右侧：石英粉输出框
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 117, 23)
                 .addItemStack(new ItemStack(ModItems.QUARTZ_POWDER.get()));
+
+        // 右侧：石英碎刺输出框
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 137, 23)
+                .addItemStack(new ItemStack(ModItems.QUARTZ_SPLINTER.get()));
     }
 
     @Override
     public void draw(@NotNull GrindingRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, @NotNull GuiGraphics guiGraphics, double mouseX, double mouseY) {
+        // 手动绘制原版物品格子 (坐标与 addSlot 保持一致)
+        this.slot.draw(guiGraphics, 16, 22);  // 石英
+        this.slot.draw(guiGraphics, 116, 22); // 石英粉
+        this.slot.draw(guiGraphics, 136, 22); // 石英碎刺
+
         // 画原版大箭头
         this.arrow.draw(guiGraphics, 38, 22);
         this.arrow.draw(guiGraphics, 88, 22);
 
-        //把 "2s" 居中画在黑曜石上方
-        guiGraphics.drawCenteredString(Minecraft.getInstance().font, "2s", 73, 10, 0xFFFFFF);
+        // 把 "2s" 居中画在黑曜石上方
+        guiGraphics.drawCenteredString(Minecraft.getInstance().font, "2s", 74, 11, 0xFFFFFF);
 
-        // 在石英粉右侧渲染一个知识之书作为“信息”图标 (x=140, y=21)
-        guiGraphics.renderItem(new ItemStack(Items.KNOWLEDGE_BOOK), 140, 21);
+        // 直接渲染黑曜石 (无外框悬浮在中间)
+        guiGraphics.renderItem(new ItemStack(Items.OBSIDIAN), 66, 22);
+
+        // 知识之书在最右侧 (无外框)
+        guiGraphics.renderItem(new ItemStack(Items.KNOWLEDGE_BOOK), 161, 22);
     }
 
     @Override
     public @NotNull List<Component> getTooltipStrings(@NotNull GrindingRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {
-        //仅当鼠标悬停在知识之书图标上时 (x: 140~156, y: 21~37) 才显示概率
-        if (mouseX >= 140 && mouseX <= 156 && mouseY >= 21 && mouseY <= 37) {
+        if (mouseX >= 161 && mouseX <= 177 && mouseY >= 22 && mouseY <= 38) {
             return List.of(
                     Component.translatable("jei.quartz_enhanced.grinding.tooltip.title").withStyle(ChatFormatting.YELLOW),
                     Component.translatable("jei.quartz_enhanced.grinding.tooltip.4", "15%").withStyle(ChatFormatting.GRAY),
                     Component.translatable("jei.quartz_enhanced.grinding.tooltip.3", "25%").withStyle(ChatFormatting.GRAY),
                     Component.translatable("jei.quartz_enhanced.grinding.tooltip.2", "40%").withStyle(ChatFormatting.GRAY),
-                    Component.translatable("jei.quartz_enhanced.grinding.tooltip.1", "20%").withStyle(ChatFormatting.GRAY)
+                    Component.translatable("jei.quartz_enhanced.grinding.tooltip.1", "20%").withStyle(ChatFormatting.GRAY),
+                    Component.literal(""),
+                    Component.translatable("jei.quartz_enhanced.grinding.tooltip.splinter_2", "0.5%").withStyle(ChatFormatting.AQUA),
+                    Component.translatable("jei.quartz_enhanced.grinding.tooltip.splinter_1", "2%").withStyle(ChatFormatting.AQUA)
             );
         }
         return List.of();
