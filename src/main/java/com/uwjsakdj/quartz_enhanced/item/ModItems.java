@@ -92,7 +92,7 @@ public class ModItems {
     public static final RegistryObject<Item> NATURE_QUARTZ_BOOTS =
             ITEMS.register("nature_quartz_boots", () -> new NatureQuartzArmorItem(ModArmorMaterials.NATURE_QUARTZ, ArmorItem.Type.BOOTS, new Item.Properties()));
     public static final RegistryObject<Item> QUARTZ_SPLINTER =
-            ITEMS.register("quartz_splinter", () -> new Item(new Item.Properties()));
+            ITEMS.register("quartz_splinter", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> QUARTZ_SPLINTER_BREAD =
             ITEMS.register("quartz_splinter_bread", QuartzSplinterBread::new);
 
