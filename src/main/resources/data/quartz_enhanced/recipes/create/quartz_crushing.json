@@ -1,12 +1,25 @@
 {
-  "type": "create:crushing",
-  "ingredients": [
-    { "item": "minecraft:quartz" }
-  ],
-  "results": [
-    { "item": "quartz_enhanced:quartz_powder", "count": 3 },
-    { "item": "quartz_enhanced:quartz_powder", "chance": 0.25 },
-    { "item": "quartz_enhanced:quartz_splinter", "chance": 0.05 }
-  ],
-  "processingTime": 250
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "quartz_enhanced:config",
+          "recipe_type": "crushing"
+        }
+      ],
+      "recipe": {
+        "type": "create:crushing",
+        "ingredients": [
+          { "item": "minecraft:quartz" }
+        ],
+        "results": [
+          { "item": "quartz_enhanced:quartz_powder", "count": 3 },
+          { "item": "quartz_enhanced:quartz_powder", "chance": 0.25 },
+          { "item": "quartz_enhanced:quartz_splinter", "chance": 0.05 }
+        ],
+        "processingTime": 250
+      }
+    }
+  ]
 }

@@ -9,16 +9,19 @@ import com.uwjsakdj.quartz_enhanced.recipe.ModRecipes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -27,6 +30,9 @@ import com.uwjsakdj.quartz_enhanced.registry.ModBlockEntities;
 import com.uwjsakdj.quartz_enhanced.registry.ModMenuTypes;
 import com.uwjsakdj.quartz_enhanced.client.screen.ResonanceWorkbenchScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
+import com.uwjsakdj.quartz_enhanced.client.screen.MainConfigScreen;
+import net.minecraftforge.common.crafting.CraftingHelper;
+import com.uwjsakdj.quartz_enhanced.recipe.ConfigCondition;
 
 @Mod(Quartz_Enhanced.MOD_ID)
 public class Quartz_Enhanced {
@@ -35,11 +41,9 @@ public class Quartz_Enhanced {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     // ==================== 声音事件注册 ====================
-    // ❶ 创建声音注册表
     public static final DeferredRegister<SoundEvent> SOUNDS =
             DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MOD_ID);
 
-    // ❷ 注册一个名叫 quartz_crush 的声音事件
     public static final RegistryObject<SoundEvent> QUARTZ_CRUSH =
             SOUNDS.register("quartz_crush",
                     () -> SoundEvent.createFixedRangeEvent(
@@ -58,15 +62,30 @@ public class Quartz_Enhanced {
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
         ModEffects.register(modEventBus);
-        SOUNDS.register(modEventBus);   // ❸ 把声音注册表也挂上总线
+        SOUNDS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        // 注册配置屏幕（仅客户端）
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            ModLoadingContext.get().registerExtensionPoint(
+                    ConfigScreenHandler.ConfigScreenFactory.class,
+                    () -> new ConfigScreenHandler.ConfigScreenFactory(
+                            (minecraft, parentScreen) -> new MainConfigScreen(parentScreen)
+                    )
+            );
+        }
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        // 关键修改：在 setup 阶段用 CraftingHelper 注册配方条件
+        event.enqueueWork(() -> {
+            CraftingHelper.register(new ConfigCondition.Serializer());
+        });
+
         LOGGER.info("Quartz Enhanced common setup complete");
     }
 

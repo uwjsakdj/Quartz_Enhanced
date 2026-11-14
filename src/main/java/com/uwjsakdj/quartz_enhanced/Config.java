@@ -31,6 +31,15 @@ public class Config {
             .comment("The cylindrical radius (in blocks) of the wand's final damage")
             .defineInRange("wandDamageRadius", 200, 1, 1000);
 
+    // ========== 机械动力石英粉碎配方 ==========
+    public static final ForgeConfigSpec.BooleanValue ENABLE_CREATE_CRUSHING = BUILDER
+            .comment("Whether to enable the Quartz Crushing recipe for Create's Crushing Wheels")
+            .define("enableCreateCrushing", true);
+
+    public static final ForgeConfigSpec.BooleanValue ENABLE_CREATE_MILLING = BUILDER
+            .comment("Whether to enable the Quartz Milling recipe for Create's Millstone")
+            .define("enableCreateMilling", true);
+
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     // 缓存值，运行时直接读这些字段
@@ -39,6 +48,9 @@ public class Config {
     public static boolean wandAttackFriendly;
     public static boolean wandAttackPlayers;
     public static int wandDamageRadius;
+
+    public static boolean enableCreateCrushing;
+    public static boolean enableCreateMilling;
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent.Loading event) {
@@ -50,11 +62,18 @@ public class Config {
         sync();
     }
 
-    private static void sync() {
+    public static void sync() {
         wandAttackHostile = WAND_ATTACK_HOSTILE.get();
         wandAttackNeutral = WAND_ATTACK_NEUTRAL.get();
         wandAttackFriendly = WAND_ATTACK_FRIENDLY.get();
         wandAttackPlayers = WAND_ATTACK_PLAYERS.get();
         wandDamageRadius = WAND_DAMAGE_RADIUS.get();
+
+        enableCreateCrushing = ENABLE_CREATE_CRUSHING.get();
+        enableCreateMilling = ENABLE_CREATE_MILLING.get();
+    }
+    public static void save() {
+        SPEC.save();
+        sync(); // 保存后立刻同步静态缓存
     }
 }
