@@ -1,6 +1,7 @@
 package com.uwjsakdj.quartz_enhanced.item;
 
 import com.uwjsakdj.quartz_enhanced.Quartz_Enhanced;
+import com.uwjsakdj.quartz_enhanced.init.tool.ChaosBlade;
 import com.uwjsakdj.quartz_enhanced.init.tool.NatureQuartzSword;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -95,6 +96,8 @@ public class ModItems {
             ITEMS.register("quartz_splinter", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> QUARTZ_SPLINTER_BREAD =
             ITEMS.register("quartz_splinter_bread", QuartzSplinterBread::new);
+    public static final RegistryObject<Item> CHAOS_BLADE =
+            ITEMS.register("chaos_blade", ChaosBlade::new);
 
 
 
