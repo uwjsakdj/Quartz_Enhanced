@@ -5,6 +5,7 @@ import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.Checkbox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -28,10 +29,25 @@ public class VersionScreen extends Screen {
     private static final String MODRINTH_URL = "https://modrinth.com/mod/quartz_enhanced/versions";
     private static final ResourceLocation QUARTZ_BG = new ResourceLocation("minecraft:textures/block/quartz_block_side.png");
 
+    // 静态状态，会话内保持（即使退出再进入版本界面也不丢失）
+    private static boolean suppressNetworkLogs = false;
+
+    // 内部类：重写 onPress 同步勾选状态
+    private static class SuppressLogsCheckbox extends Checkbox {
+        public SuppressLogsCheckbox(int x, int y, int width, int height, Component message, boolean selected) {
+            super(x, y, width, height, message, selected);
+        }
+
+        @Override
+        public void onPress() {
+            super.onPress();
+            suppressNetworkLogs = this.selected();
+        }
+    }
+
     public VersionScreen(Screen parent) {
         super(Component.translatable("config.quartz_enhanced.version.title"));
         this.parent = parent;
-
     }
 
     @Override
@@ -100,7 +116,14 @@ public class VersionScreen extends Screen {
             ).bounds(this.width / 2 - 80, y, 160, 20).build());
         }
 
-        // 3. 返回按钮 (底部)
+        // 3. 左下角日志开关
+        this.addRenderableWidget(new SuppressLogsCheckbox(
+                10, this.height - 30, 240, 20,
+                Component.translatable("config.quartz_enhanced.suppress_logs"),
+                suppressNetworkLogs
+        ));
+
+        // 4. 返回按钮 (底部)
         this.addRenderableWidget(Button.builder(
                 Component.translatable("gui.done"),
                 (button) -> {
@@ -140,16 +163,17 @@ public class VersionScreen extends Screen {
     private void performUpdateCheck() {
         String apiUrl;
         try {
-            // 修复：对 JSON 数组进行 URL 编码，避免 URI 解析异常
             String loaders = java.net.URLEncoder.encode("[\"forge\"]", java.nio.charset.StandardCharsets.UTF_8);
             String gameVersions = java.net.URLEncoder.encode("[\"1.20.1\"]", java.nio.charset.StandardCharsets.UTF_8);
             apiUrl = String.format("https://api.modrinth.com/v2/project/%s/version?loaders=%s&game_versions=%s", MODRINTH_ID, loaders, gameVersions);
         } catch (Exception e) {
-            // 如果编码失败，降级为请求所有版本（拿到最新一个再过滤）
             apiUrl = "https://api.modrinth.com/v2/project/" + MODRINTH_ID + "/version";
         }
 
         String finalApiUrl = apiUrl;
+        // 点击检查时的快照，避免用户中途勾选影响当次请求
+        final boolean suppressLogsSnapshot = suppressNetworkLogs;
+
         CompletableFuture.supplyAsync(() -> {
             try {
                 HttpClient client = HttpClient.newHttpClient();
@@ -162,7 +186,6 @@ public class VersionScreen extends Screen {
 
                 if (response.statusCode() == 200) {
                     String json = response.body();
-                    // 简易解析：拿到第一个 version_number
                     int idx = json.indexOf("\"version_number\":\"");
                     if (idx != -1) {
                         int start = idx + 18;
@@ -173,13 +196,18 @@ public class VersionScreen extends Screen {
                 } else if (response.statusCode() == 404) {
                     return "ERROR_NOT_FOUND";
                 } else {
-                    System.err.println("[QuartzEnhanced] Update check failed. HTTP Status: " + response.statusCode());
+                    // 根据勾选决定是否打印日志
+                    if (!suppressLogsSnapshot) {
+                        System.err.println("[QuartzEnhanced] Update check failed. HTTP Status: " + response.statusCode());
+                    }
                     return "ERROR_SERVER";
                 }
             } catch (Exception e) {
-                // 把具体报错打印到控制台，方便排查
-                System.err.println("[QuartzEnhanced] Network request failed!");
-                e.printStackTrace();
+                // 根据勾选决定是否打印日志
+                if (!suppressLogsSnapshot) {
+                    System.err.println("[QuartzEnhanced] Network request failed!");
+                    e.printStackTrace();
+                }
                 return "ERROR_NETWORK";
             }
         }).thenAccept(remoteVersion -> {
@@ -205,18 +233,15 @@ public class VersionScreen extends Screen {
         }
 
         try {
-            // 👈 使用正则提取版本号：只匹配 数字.数字.数字（支持 1.5 或 1.5.3 的格式）
             java.util.regex.Pattern pattern = java.util.regex.Pattern.compile("(\\d+)\\.(\\d+)(?:\\.(\\d+))?");
 
             java.util.regex.Matcher localMatcher = pattern.matcher(local);
             java.util.regex.Matcher remoteMatcher = pattern.matcher(remote);
 
-            // 如果本地或远程有一方完全没有数字版本号，默认返回已是最新，防止误报
             if (!localMatcher.find() || !remoteMatcher.find()) {
                 return UpdateResult.UP_TO_DATE;
             }
 
-            // 提取主版本、次版本、补丁版本
             int lMajor = Integer.parseInt(localMatcher.group(1));
             int lMinor = Integer.parseInt(localMatcher.group(2));
             int lPatch = localMatcher.group(3) != null ? Integer.parseInt(localMatcher.group(3)) : 0;
@@ -225,7 +250,6 @@ public class VersionScreen extends Screen {
             int rMinor = Integer.parseInt(remoteMatcher.group(2));
             int rPatch = remoteMatcher.group(3) != null ? Integer.parseInt(remoteMatcher.group(3)) : 0;
 
-            // 逐级比对
             if (rMajor > lMajor) return UpdateResult.NEWER_AVAILABLE;
             if (lMajor > rMajor) return UpdateResult.LOCAL_NEWER;
 
@@ -238,7 +262,6 @@ public class VersionScreen extends Screen {
             return UpdateResult.UP_TO_DATE;
 
         } catch (Exception e) {
-            // 如果解析崩溃，默认认为已是最新，避免红字报错影响玩家体验
             return UpdateResult.UP_TO_DATE;
         }
     }
