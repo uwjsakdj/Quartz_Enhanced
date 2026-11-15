@@ -36,6 +36,7 @@
   "item.quartz_enhanced.nature_quartz_boots": "Nature Quartz Boots",
   "item.quartz_enhanced.quartz_splinter": "Quartz Splinter",
   "item.quartz_enhanced.quartz_splinter_bread": "Quartz Splinter Bread",
+  "item.quartz_enhanced.chaos_blade": "Chaos Blade",
 
   "container.quartz_enhanced.resonance_workbench": "Resonance Workbench",
 
@@ -57,6 +58,11 @@
   "tooltip.quartz_enhanced.sweet_soup.dig_speed": "Haste I (1:30)",
   "tooltip.quartz_enhanced.sweet_soup.comfort": "Comfort I (1:30)",
   "tooltip.quartz_enhanced.quartz_splinter_bread.prickly": "Prickly I (1:00)",
+  "tooltip.quartz_enhanced.chaos_blade.line1": "Chaos ※ Power",
+  "tooltip.quartz_enhanced.chaos_blade.line2": "Forged by a legendary artisan over a lifetime, infused with the breath of the Ender Dragon, embedded with the heart of the Wither, and tainted by the Warden's presence.",
+  "tooltip.quartz_enhanced.chaos_blade.line3": "Quartz ☆ Collection",
+  "message.quartz_enhanced.chaos_blade.cooldown": "Chaos power cooldown: %s seconds",
+  "tooltip.quartz_enhanced.chaos_blade.cooldown": "Skill cooldown: %s seconds",
 
   "itemGroup.quartz_enhanced_tab": "Quartz enhanced Tab",
 
@@ -109,6 +115,7 @@
   "config.quartz_enhanced.error_local_newer": "Error: Version Not Found",
   "config.quartz_enhanced.error_network": "Error: Network Unreachable",
   "config.quartz_enhanced.error_server": "Error: Server Request Failed",
+  "config.quartz_enhanced.suppress_logs": "Suppress network error logs",
   "config.quartz_enhanced.main.title": "Quartz Enhanced",
   "config.quartz_enhanced.main.version": "Mod Version",
   "config.quartz_enhanced.main.settings": "Mod Settings",

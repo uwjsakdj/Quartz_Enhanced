@@ -36,6 +36,7 @@
   "item.quartz_enhanced.nature_quartz_boots": "自然石英靴子",
   "item.quartz_enhanced.quartz_splinter": "石英碎刺",
   "item.quartz_enhanced.quartz_splinter_bread": "石英碎刺面包",
+  "item.quartz_enhanced.chaos_blade": "混沌之刃",
 
 
   "container.quartz_enhanced.resonance_workbench": "共鸣工作台",
@@ -58,6 +59,11 @@
   "tooltip.quartz_enhanced.sweet_soup.dig_speed": "急迫 I（1:30）",
   "tooltip.quartz_enhanced.sweet_soup.comfort": "舒适 I（1:30）",
   "tooltip.quartz_enhanced.quartz_splinter_bread.prickly": "皮刺 I（1:00）",
+  "tooltip.quartz_enhanced.chaos_blade.line1": "混沌※之力",
+  "tooltip.quartz_enhanced.chaos_blade.line2": "传奇工匠历经一生锻造，灌注末影龙之气息，镶嵌凋零之心脏，沾染坚守者之气息",
+  "tooltip.quartz_enhanced.chaos_blade.line3": "石英☆典藏",
+  "message.quartz_enhanced.chaos_blade.cooldown": "混沌之力冷却中: %s 秒",
+  "tooltip.quartz_enhanced.chaos_blade.cooldown": "技能冷却中: %s 秒",
 
   "message.quartz_enhanced.insufficient_experience": "经验不足！需要至少45级经验才能释放此法术。",
 
@@ -110,6 +116,7 @@
   "config.quartz_enhanced.error_local_newer": "错误：未找到的版本",
   "config.quartz_enhanced.error_network": "网络错误：无法连接",
   "config.quartz_enhanced.error_server": "网站错误：请求失败",
+  "config.quartz_enhanced.suppress_logs": "不输出网络错误日志",
   "config.quartz_enhanced.main.title": "石英增强",
   "config.quartz_enhanced.main.version": "模组版本",
   "config.quartz_enhanced.main.settings": "模组配置",
