@@ -1,0 +1,37 @@
+{
+  "parent": "quartz_enhanced:root",
+  "display": {
+    "icon": {
+      "item": "quartz_enhanced:moonlight_blade"
+    },
+    "title": {
+      "translate": "advancements.quartz_enhanced.moonlight_blade.title"
+    },
+    "description": {
+      "translate": "advancements.quartz_enhanced.moonlight_blade.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_moonlight_blade": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "quartz_enhanced:moonlight_blade"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_moonlight_blade"
+    ]
+  ]
+}

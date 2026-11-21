@@ -1,0 +1,37 @@
+{
+  "parent": "quartz_enhanced:obtain_moonlight_blade",
+  "display": {
+    "icon": {
+      "item": "quartz_enhanced:chaos_blade"
+    },
+    "title": {
+      "translate": "advancements.quartz_enhanced.chaos_blade.title"
+    },
+    "description": {
+      "translate": "advancements.quartz_enhanced.chaos_blade.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_chaos_blade": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "quartz_enhanced:chaos_blade"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chaos_blade"
+    ]
+  ]
+}
