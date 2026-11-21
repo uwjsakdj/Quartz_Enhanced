@@ -37,7 +37,7 @@
   "item.quartz_enhanced.quartz_splinter": "石英碎刺",
   "item.quartz_enhanced.quartz_splinter_bread": "石英碎刺面包",
   "item.quartz_enhanced.chaos_blade": "混沌之刃",
-
+  "item.quartz_enhanced.moonlight_blade": "明月之刃",
 
   "container.quartz_enhanced.resonance_workbench": "共鸣工作台",
 
@@ -62,10 +62,17 @@
   "tooltip.quartz_enhanced.chaos_blade.line1": "混沌※之力",
   "tooltip.quartz_enhanced.chaos_blade.line2": "传奇工匠历经一生锻造，灌注末影龙之气息，镶嵌凋零之心脏，沾染坚守者之气息",
   "tooltip.quartz_enhanced.chaos_blade.line3": "石英☆典藏",
-  "message.quartz_enhanced.chaos_blade.cooldown": "混沌之力冷却中: %s 秒",
   "tooltip.quartz_enhanced.chaos_blade.cooldown": "技能冷却中: %s 秒",
+  "tooltip.quartz_enhanced.moonlight_blade.line1": "明月※之力",
+  "tooltip.quartz_enhanced.moonlight_blade.line2": "一把吸收了月光的石英剑",
+  "tooltip.quartz_enhanced.moonlight_blade.line3": "石英☆典藏",
+  "tooltip.quartz_enhanced.moonlight_blade.cooldown": "技能冷却中: %s 秒",
 
   "message.quartz_enhanced.insufficient_experience": "经验不足！需要至少45级经验才能释放此法术。",
+  "message.quartz_enhanced.chaos_blade.cooldown": "混沌之力冷却中: %s 秒",
+  "message.quartz_enhanced.moonlight_blade.nether": "下界没有月光，无法使用此技能！",
+  "message.quartz_enhanced.moonlight_blade.day": "白天的阳光过于刺眼，无法汇聚月光！",
+  "message.quartz_enhanced.moonlight_blade.cooldown": "月光冷却中: %s 秒",
 
   "itemGroup.quartz_enhanced_tab": "增强·石英",
 

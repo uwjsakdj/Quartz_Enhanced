@@ -37,6 +37,7 @@
   "item.quartz_enhanced.quartz_splinter": "Quartz Splinter",
   "item.quartz_enhanced.quartz_splinter_bread": "Quartz Splinter Bread",
   "item.quartz_enhanced.chaos_blade": "Chaos Blade",
+  "item.quartz_enhanced.moonlight_blade": "Moonlight Blade",
 
   "container.quartz_enhanced.resonance_workbench": "Resonance Workbench",
 
@@ -61,8 +62,11 @@
   "tooltip.quartz_enhanced.chaos_blade.line1": "Chaos ※ Power",
   "tooltip.quartz_enhanced.chaos_blade.line2": "Forged by a legendary artisan over a lifetime, infused with the breath of the Ender Dragon, embedded with the heart of the Wither, and tainted by the Warden's presence.",
   "tooltip.quartz_enhanced.chaos_blade.line3": "Quartz ☆ Collection",
-  "message.quartz_enhanced.chaos_blade.cooldown": "Chaos power cooldown: %s seconds",
   "tooltip.quartz_enhanced.chaos_blade.cooldown": "Skill cooldown: %s seconds",
+  "tooltip.quartz_enhanced.moonlight_blade.line1": "Moonlight ※ Power",
+  "tooltip.quartz_enhanced.moonlight_blade.line2": "A quartz sword that has absorbed the moonlight.",
+  "tooltip.quartz_enhanced.moonlight_blade.line3": "Quartz ☆ Collection",
+  "tooltip.quartz_enhanced.moonlight_blade.cooldown": "Skill cooldown: %s seconds",
 
   "itemGroup.quartz_enhanced_tab": "Quartz enhanced Tab",
 
@@ -73,6 +77,10 @@
   "sound.quartz_enhanced.quartz_crush": "Quartz crushed",
 
   "message.quartz_enhanced.insufficient_experience": "Insufficient experience! You need at least level 45 to cast this spell.",
+  "message.quartz_enhanced.chaos_blade.cooldown": "Chaos power cooldown: %s seconds",
+  "message.quartz_enhanced.moonlight_blade.nether": "There is no moonlight in the Nether!",
+  "message.quartz_enhanced.moonlight_blade.day": "The sunlight is too bright to gather moonlight!",
+  "message.quartz_enhanced.moonlight_blade.cooldown": "Moonlight cooldown: %s seconds",
 
   "advancements.quartz_enhanced.root.title": "Quartz Enhanced",
   "advancements.quartz_enhanced.root.description": "Begin your journey of quartz enhancement",
