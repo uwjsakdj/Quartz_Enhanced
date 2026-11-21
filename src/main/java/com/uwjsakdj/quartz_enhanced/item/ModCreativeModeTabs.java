@@ -61,6 +61,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.NATURE_QUARTZ_CHESTPLATE.get());
                         pOutput.accept(ModItems.NATURE_QUARTZ_LEGGINGS.get());
                         pOutput.accept(ModItems.NATURE_QUARTZ_BOOTS.get());
+                        pOutput.accept(ModItems.MOONLIGHT_BLADE.get());
                         pOutput.accept(ModItems.CHAOS_BLADE.get());
 
                     }).build());

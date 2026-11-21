@@ -98,6 +98,8 @@ public class ModItems {
             ITEMS.register("quartz_splinter_bread", QuartzSplinterBread::new);
     public static final RegistryObject<Item> CHAOS_BLADE =
             ITEMS.register("chaos_blade", ChaosBlade::new);
+    public static final RegistryObject<Item> MOONLIGHT_BLADE =
+            ITEMS.register("moonlight_blade", MoonlightBlade::new);
 
 
 

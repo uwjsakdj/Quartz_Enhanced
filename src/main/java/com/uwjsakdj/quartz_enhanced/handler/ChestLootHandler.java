@@ -19,22 +19,31 @@ public class ChestLootHandler {
     public static void onLootTableLoad(LootTableLoadEvent event) {
         ResourceLocation name = event.getName();
 
-        // 判断当前加载的是否是 远古城市(Ancient City) 或 末地城(End City) 的战利品箱
-        if (name.equals(BuiltInLootTables.ANCIENT_CITY) || 
-            name.equals(BuiltInLootTables.END_CITY_TREASURE)) {
-            
-            // 构建一个新的战利品池
-            LootPool.Builder poolBuilder = LootPool.lootPool()
-                    // 每个箱子只抽取1次
+        // 1. 远古城市：只加入混沌之刃 (2%)
+        if (name.equals(BuiltInLootTables.ANCIENT_CITY)) {
+            LootPool.Builder chaosPool = LootPool.lootPool()
                     .setRolls(ConstantValue.exactly(1))
-                    // 放入混沌之刃，权重为 1
-                    .add(LootItem.lootTableItem(ModItems.CHAOS_BLADE.get())
-                            .setWeight(1))
-                    // 放入“空”，权重为 49。这意味着 1 / 50 的概率出刀（2% 的低概率）
+                    // 混沌之刃权重 1，空物品权重 49 -> 1/50 = 2%
+                    .add(LootItem.lootTableItem(ModItems.CHAOS_BLADE.get()).setWeight(1))
                     .add(EmptyLootItem.emptyItem().setWeight(49));
+            event.getTable().addPool(chaosPool.build());
+        }
 
-            // 将这个池子加入到原有的战利品表中
-            event.getTable().addPool(poolBuilder.build());
+        // 2. 末地城：加入混沌之刃 (2%) 和 明月之刃 (2.3%)
+        else if (name.equals(BuiltInLootTables.END_CITY_TREASURE)) {
+            // 混沌之刃池子 (2%)
+            LootPool.Builder chaosPool = LootPool.lootPool()
+                    .setRolls(ConstantValue.exactly(1))
+                    .add(LootItem.lootTableItem(ModItems.CHAOS_BLADE.get()).setWeight(1))
+                    .add(EmptyLootItem.emptyItem().setWeight(49));
+            event.getTable().addPool(chaosPool.build());
+
+            // 明月之刃池子 (2.3%) -> 权重 1 和 42 (1/43 ≈ 2.325%)
+            LootPool.Builder moonlightPool = LootPool.lootPool()
+                    .setRolls(ConstantValue.exactly(1))
+                    .add(LootItem.lootTableItem(ModItems.MOONLIGHT_BLADE.get()).setWeight(1))
+                    .add(EmptyLootItem.emptyItem().setWeight(42));
+            event.getTable().addPool(moonlightPool.build());
         }
     }
 }
