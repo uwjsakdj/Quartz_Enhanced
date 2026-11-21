@@ -36,6 +36,8 @@
   "item.quartz_enhanced.nature_quartz_boots": "自然石英靴子",
   "item.quartz_enhanced.quartz_splinter": "石英碎刺",
   "item.quartz_enhanced.quartz_splinter_bread": "石英碎刺麵包",
+  "item.quartz_enhanced.chaos_blade": "混沌之刃",
+  "item.quartz_enhanced.moonlight_blade": "明月之刃",
 
   "container.quartz_enhanced.resonance_workbench": "共鳴工作台",
 
@@ -57,8 +59,20 @@
   "tooltip.quartz_enhanced.sweet_soup.dig_speed": "急迫 I（1:30）",
   "tooltip.quartz_enhanced.sweet_soup.comfort": "舒適 I（1:30）",
   "tooltip.quartz_enhanced.quartz_splinter_bread.prickly": "皮刺 I（1:00）",
+  "tooltip.quartz_enhanced.chaos_blade.line1": "混沌※之力",
+  "tooltip.quartz_enhanced.chaos_blade.line2": "傳奇工匠歷經一生鍛造，灌注末影龍之氣息，鑲嵌凋零之心臟，沾染堅守者之氣息",
+  "tooltip.quartz_enhanced.chaos_blade.line3": "石英☆典藏",
+  "tooltip.quartz_enhanced.chaos_blade.cooldown": "技能冷卻中: %s 秒",
+  "tooltip.quartz_enhanced.moonlight_blade.line1": "明月※之力",
+  "tooltip.quartz_enhanced.moonlight_blade.line2": "一把吸收了月光的石英劍",
+  "tooltip.quartz_enhanced.moonlight_blade.line3": "石英☆典藏",
+  "tooltip.quartz_enhanced.moonlight_blade.cooldown": "技能冷卻中: %s 秒",
 
   "message.quartz_enhanced.insufficient_experience": "經驗不足！需要至少45級經驗才能釋放此法術。",
+  "message.quartz_enhanced.chaos_blade.cooldown": "混沌之力冷卻中: %s 秒",
+  "message.quartz_enhanced.moonlight_blade.nether": "地獄沒有月光，無法使用此技能！",
+  "message.quartz_enhanced.moonlight_blade.day": "白天的陽光過於刺眼，無法匯聚月光！",
+  "message.quartz_enhanced.moonlight_blade.cooldown": "月光冷卻中: %s 秒",
 
   "itemGroup.quartz_enhanced_tab": "增強·石英",
 
@@ -85,6 +99,10 @@
   "advancements.quartz_enhanced.nature_armor.description": "自然的生命力不僅賦予了錠，也化作了守護你的堅實壁壘。",
   "advancements.quartz_enhanced.crunchy.title": "嘎嘣脆",
   "advancements.quartz_enhanced.crunchy.description": "吃下一個咂嘴的石英碎刺麵包",
+  "advancements.quartz_enhanced.moonlight_blade.title": "月有陰晴圓缺，此事古難全",
+  "advancements.quartz_enhanced.moonlight_blade.description": "獲得明月之刃",
+  "advancements.quartz_enhanced.chaos_blade.title": "執掌混沌",
+  "advancements.quartz_enhanced.chaos_blade.description": "獲得混沌之刃",
 
   "jei.quartz_enhanced.resonance": "共鳴",
   "jei.quartz_enhanced.safety": "安全性: %s%%",
@@ -108,6 +126,7 @@
   "config.quartz_enhanced.error_local_newer": "錯誤：未找到的版本",
   "config.quartz_enhanced.error_network": "網路錯誤：無法連線",
   "config.quartz_enhanced.error_server": "網站錯誤：請求失敗",
+  "config.quartz_enhanced.suppress_logs": "不輸出網路錯誤日誌",
   "config.quartz_enhanced.main.title": "石英增強",
   "config.quartz_enhanced.main.version": "模組版本",
   "config.quartz_enhanced.main.settings": "模組設定",

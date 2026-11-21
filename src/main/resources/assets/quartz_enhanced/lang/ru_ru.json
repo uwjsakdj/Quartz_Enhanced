@@ -36,6 +36,8 @@
   "item.quartz_enhanced.nature_quartz_boots": "Природные кварцевые ботинки",
   "item.quartz_enhanced.quartz_splinter": "Кварцевый осколок",
   "item.quartz_enhanced.quartz_splinter_bread": "Хлеб с кварцевыми осколками",
+  "item.quartz_enhanced.chaos_blade": "Клинок Хаоса",
+  "item.quartz_enhanced.moonlight_blade": "Клинок Лунного Света",
 
   "container.quartz_enhanced.resonance_workbench": "Резонансный верстак",
 
@@ -57,8 +59,20 @@
   "tooltip.quartz_enhanced.sweet_soup.dig_speed": "Спешка I (1:30)",
   "tooltip.quartz_enhanced.sweet_soup.comfort": "Комфорт I (1:30)",
   "tooltip.quartz_enhanced.quartz_splinter_bread.prickly": "Шипастость I (1:00)",
+  "tooltip.quartz_enhanced.chaos_blade.line1": "Сила ※ Хаоса",
+  "tooltip.quartz_enhanced.chaos_blade.line2": "Выкован легендарным мастером за всю жизнь, наполнен дыханием Эндер-дракона, украшен сердцем Иссушителя и пропитан аурой Хранителя.",
+  "tooltip.quartz_enhanced.chaos_blade.line3": "Кварцевая ☆ Коллекция",
+  "tooltip.quartz_enhanced.chaos_blade.cooldown": "Перезарядка навыка: %s сек.",
+  "tooltip.quartz_enhanced.moonlight_blade.line1": "Сила ※ Лунного Света",
+  "tooltip.quartz_enhanced.moonlight_blade.line2": "Кварцевый меч, впитавший лунный свет",
+  "tooltip.quartz_enhanced.moonlight_blade.line3": "Кварцевая ☆ Коллекция",
+  "tooltip.quartz_enhanced.moonlight_blade.cooldown": "Перезарядка навыка: %s сек.",
 
   "message.quartz_enhanced.insufficient_experience": "Недостаточно опыта! Требуется минимум 45 уровень, чтобы произнести это заклинание.",
+  "message.quartz_enhanced.chaos_blade.cooldown": "Перезарядка силы Хаоса: %s сек.",
+  "message.quartz_enhanced.moonlight_blade.nether": "В Незере нет лунного света, этот навык нельзя использовать!",
+  "message.quartz_enhanced.moonlight_blade.day": "Дневной свет слишком ярок, чтобы собрать лунный свет!",
+  "message.quartz_enhanced.moonlight_blade.cooldown": "Перезарядка лунного света: %s сек.",
 
   "itemGroup.quartz_enhanced_tab": "Усиленный кварц",
 
@@ -85,6 +99,10 @@
   "advancements.quartz_enhanced.nature_armor.description": "Жизненная сила природы не только дала жизнь слитку, но и стала твоей надежной защитой.",
   "advancements.quartz_enhanced.crunchy.title": "Хрустящий",
   "advancements.quartz_enhanced.crunchy.description": "Съешь хрустящий на зубах хлеб с кварцевыми осколками",
+  "advancements.quartz_enhanced.moonlight_blade.title": "Луна бывает полной и ущербной, это было всегда",
+  "advancements.quartz_enhanced.moonlight_blade.description": "Получить Клинок Лунного Света",
+  "advancements.quartz_enhanced.chaos_blade.title": "Владыка Хаоса",
+  "advancements.quartz_enhanced.chaos_blade.description": "Получить Клинок Хаоса",
 
   "jei.quartz_enhanced.resonance": "Резонанс",
   "jei.quartz_enhanced.safety": "Безопасность: %s%%",
@@ -108,6 +126,7 @@
   "config.quartz_enhanced.error_local_newer": "Ошибка: Версия не найдена",
   "config.quartz_enhanced.error_network": "Ошибка сети: Нет подключения",
   "config.quartz_enhanced.error_server": "Ошибка сайта: Запрос не выполнен",
+  "config.quartz_enhanced.suppress_logs": "Не выводить логи сетевых ошибок",
   "config.quartz_enhanced.main.title": "Усиленный кварц",
   "config.quartz_enhanced.main.version": "Версия мода",
   "config.quartz_enhanced.main.settings": "Настройки мода",

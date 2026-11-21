@@ -100,6 +100,10 @@
   "advancements.quartz_enhanced.nature_armor.description": "The life force of nature not only infuses the ingot but also forms a solid barrier to protect you.",
   "advancements.quartz_enhanced.crunchy.title": "Crunchy",
   "advancements.quartz_enhanced.crunchy.description": "Eat a mouth-watering Quartz Splinter Bread",
+  "advancements.quartz_enhanced.moonlight_blade.title": "The Moon Waxes and Wanes",
+  "advancements.quartz_enhanced.moonlight_blade.description": "Obtain the Moonlight Blade",
+  "advancements.quartz_enhanced.chaos_blade.title": "Wielder of Chaos",
+  "advancements.quartz_enhanced.chaos_blade.description": "Obtain the Chaos Blade",
 
   "jei.quartz_enhanced.resonance": "Resonance",
   "jei.quartz_enhanced.safety": "Safety: %s%%",

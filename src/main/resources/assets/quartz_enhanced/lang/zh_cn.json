@@ -100,6 +100,10 @@
   "advancements.quartz_enhanced.nature_armor.description": "自然的生命力不仅赋予了锭，也化作了守护你的坚实壁垒。",
   "advancements.quartz_enhanced.crunchy.title": "嘎嘣脆",
   "advancements.quartz_enhanced.crunchy.description": "吃下一个咂嘴的石英碎刺面包",
+  "advancements.quartz_enhanced.moonlight_blade.title": "月有阴晴圆缺，此事古难全",
+  "advancements.quartz_enhanced.moonlight_blade.description": "获得明月之刃",
+  "advancements.quartz_enhanced.chaos_blade.title": "执掌混沌",
+  "advancements.quartz_enhanced.chaos_blade.description": "获得混沌之刃",
 
   "jei.quartz_enhanced.resonance": "共鸣",
   "jei.quartz_enhanced.safety": "安全性: %s%%",

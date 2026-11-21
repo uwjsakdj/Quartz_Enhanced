@@ -36,6 +36,8 @@
   "item.quartz_enhanced.nature_quartz_boots": "自然石英ブーツ",
   "item.quartz_enhanced.quartz_splinter": "石英の破片",
   "item.quartz_enhanced.quartz_splinter_bread": "石英の破片パン",
+  "item.quartz_enhanced.chaos_blade": "混沌の刃",
+  "item.quartz_enhanced.moonlight_blade": "明月の刃",
 
   "container.quartz_enhanced.resonance_workbench": "共鳴作業台",
 
@@ -57,8 +59,20 @@
   "tooltip.quartz_enhanced.sweet_soup.dig_speed": "採掘速度上昇 I (1:30)",
   "tooltip.quartz_enhanced.sweet_soup.comfort": "安らぎ I (1:30)",
   "tooltip.quartz_enhanced.quartz_splinter_bread.prickly": "トゲトゲ I (1:00)",
+  "tooltip.quartz_enhanced.chaos_blade.line1": "混沌※の力",
+  "tooltip.quartz_enhanced.chaos_blade.line2": "伝説の工匠が生涯をかけて鍛え上げ、エンダードラゴンの息吹を注ぎ込み、ウィザーの心臓を嵌め込み、ウォーデンの気配を染み込ませた。",
+  "tooltip.quartz_enhanced.chaos_blade.line3": "石英☆コレクション",
+  "tooltip.quartz_enhanced.chaos_blade.cooldown": "スキルクールダウン中: %s 秒",
+  "tooltip.quartz_enhanced.moonlight_blade.line1": "明月※の力",
+  "tooltip.quartz_enhanced.moonlight_blade.line2": "月光を吸収した石英の剣",
+  "tooltip.quartz_enhanced.moonlight_blade.line3": "石英☆コレクション",
+  "tooltip.quartz_enhanced.moonlight_blade.cooldown": "スキルクールダウン中: %s 秒",
 
   "message.quartz_enhanced.insufficient_experience": "経験値が足りません！この呪文を発動するにはレベル45以上が必要です。",
+  "message.quartz_enhanced.chaos_blade.cooldown": "混沌の力クールダウン中: %s 秒",
+  "message.quartz_enhanced.moonlight_blade.nether": "ネザーには月光がないため、このスキルは使用できません！",
+  "message.quartz_enhanced.moonlight_blade.day": "昼間の日差しが強すぎて、月光を集められません！",
+  "message.quartz_enhanced.moonlight_blade.cooldown": "月光クールダウン中: %s 秒",
 
   "itemGroup.quartz_enhanced_tab": "増強・石英",
 
@@ -85,6 +99,10 @@
   "advancements.quartz_enhanced.nature_armor.description": "自然の生命力はインゴットに宿っただけでなく、あなたを守る堅牢な防壁にもなりました。",
   "advancements.quartz_enhanced.crunchy.title": "バリバリ",
   "advancements.quartz_enhanced.crunchy.description": "舌触りがジャリジャリする石英の破片パンを食べる",
+  "advancements.quartz_enhanced.moonlight_blade.title": "月に陰晴円欠あり、此事古より全うし難し",
+  "advancements.quartz_enhanced.moonlight_blade.description": "明月の刃を入手する",
+  "advancements.quartz_enhanced.chaos_blade.title": "混沌を統べる者",
+  "advancements.quartz_enhanced.chaos_blade.description": "混沌の刃を入手する",
 
   "jei.quartz_enhanced.resonance": "共鳴",
   "jei.quartz_enhanced.safety": "安全性: %s%%",
@@ -108,6 +126,7 @@
   "config.quartz_enhanced.error_local_newer": "エラー: バージョンが見つかりません",
   "config.quartz_enhanced.error_network": "ネットワークエラー: 接続できません",
   "config.quartz_enhanced.error_server": "サイトエラー: リクエスト失敗",
+  "config.quartz_enhanced.suppress_logs": "ネットワークエラーログを出力しない",
   "config.quartz_enhanced.main.title": "石英増強",
   "config.quartz_enhanced.main.version": "MODバージョン",
   "config.quartz_enhanced.main.settings": "MOD設定",

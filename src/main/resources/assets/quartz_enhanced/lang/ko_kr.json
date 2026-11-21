@@ -36,6 +36,8 @@
   "item.quartz_enhanced.nature_quartz_boots": "자연 석영 부츠",
   "item.quartz_enhanced.quartz_splinter": "석영 파편",
   "item.quartz_enhanced.quartz_splinter_bread": "석영 파편 빵",
+  "item.quartz_enhanced.chaos_blade": "혼돈의 칼날",
+  "item.quartz_enhanced.moonlight_blade": "명월의 칼날",
 
   "container.quartz_enhanced.resonance_workbench": "공명 작업대",
 
@@ -57,8 +59,20 @@
   "tooltip.quartz_enhanced.sweet_soup.dig_speed": "성급함 I (1:30)",
   "tooltip.quartz_enhanced.sweet_soup.comfort": "편안함 I (1:30)",
   "tooltip.quartz_enhanced.quartz_splinter_bread.prickly": "가시 I (1:00)",
+  "tooltip.quartz_enhanced.chaos_blade.line1": "혼돈※의 힘",
+  "tooltip.quartz_enhanced.chaos_blade.line2": "전설의 장인이 일생 동안 단련하여 엔더 드래곤의 숨결을 불어넣고, 위더의 심장을 박아넣고, 워든의 기운을 스며들게 했다.",
+  "tooltip.quartz_enhanced.chaos_blade.line3": "석영☆컬렉션",
+  "tooltip.quartz_enhanced.chaos_blade.cooldown": "스킬 쿨다운: %s초",
+  "tooltip.quartz_enhanced.moonlight_blade.line1": "명월※의 힘",
+  "tooltip.quartz_enhanced.moonlight_blade.line2": "달빛을 흡수한 석영 검",
+  "tooltip.quartz_enhanced.moonlight_blade.line3": "석영☆컬렉션",
+  "tooltip.quartz_enhanced.moonlight_blade.cooldown": "스킬 쿨다운: %s초",
 
   "message.quartz_enhanced.insufficient_experience": "경험이 부족합니다! 이 주문을 시전하려면 최소 45레벨이 필요합니다.",
+  "message.quartz_enhanced.chaos_blade.cooldown": "혼돈의 힘 쿨다운 중: %s초",
+  "message.quartz_enhanced.moonlight_blade.nether": "네더에는 달빛이 없어 이 스킬을 사용할 수 없습니다!",
+  "message.quartz_enhanced.moonlight_blade.day": "낮의 햇빛이 너무 눈부셔 달빛을 모을 수 없습니다!",
+  "message.quartz_enhanced.moonlight_blade.cooldown": "달빛 쿨다운 중: %s초",
 
   "itemGroup.quartz_enhanced_tab": "증강·석영",
 
@@ -85,6 +99,10 @@
   "advancements.quartz_enhanced.nature_armor.description": "자연의 생명력은 주괴에 깃들었을 뿐만 아니라, 당신을 지키는 든든한 방벽이 되었습니다.",
   "advancements.quartz_enhanced.crunchy.title": "바삭바삭",
   "advancements.quartz_enhanced.crunchy.description": "입안에서 오도독거리는 석영 파편 빵을 먹다",
+  "advancements.quartz_enhanced.moonlight_blade.title": "달에는 음과 양, 차고 기움이 있으니 이 일은 예로부터 온전하기 어렵다",
+  "advancements.quartz_enhanced.moonlight_blade.description": "명월의 칼날 획득",
+  "advancements.quartz_enhanced.chaos_blade.title": "혼돈을 다스리다",
+  "advancements.quartz_enhanced.chaos_blade.description": "혼돈의 칼날 획득",
 
   "jei.quartz_enhanced.resonance": "공명",
   "jei.quartz_enhanced.safety": "안전성: %s%%",
@@ -108,6 +126,7 @@
   "config.quartz_enhanced.error_local_newer": "오류: 버전을 찾을 수 없음",
   "config.quartz_enhanced.error_network": "네트워크 오류: 연결할 수 없음",
   "config.quartz_enhanced.error_server": "사이트 오류: 요청 실패",
+  "config.quartz_enhanced.suppress_logs": "네트워크 오류 로그 출력 안 함",
   "config.quartz_enhanced.main.title": "석영 증강",
   "config.quartz_enhanced.main.version": "모드 버전",
   "config.quartz_enhanced.main.settings": "모드 설정",
